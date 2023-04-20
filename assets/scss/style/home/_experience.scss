@@ -1,0 +1,73 @@
+.experience {
+    position: relative;
+    // .experience__wrapper
+
+    &__wrapper {
+    @include ui-padding(top, 11);
+    @include ui-padding(bottom, 15);
+        display: flex;
+    }
+
+    // .experience__director
+
+    &__director {
+        position: relative;
+        z-index: $ui-index-1;
+        text-align: center;
+        @include ui-margin(right, 12);
+        .button {
+            width: 380px;
+            @include ui-margin(top, 12);
+        }
+        img {
+            width: 436px;
+            height: 618px;
+            @include ui-margin(top, 42);
+        }
+    }
+
+    // .experience__subinfo
+
+    &__name {
+        display: inline-block;
+        @include ui-margin(top, 4);
+        font-style: italic;
+        font-weight: 600;
+        font-size: 18px;
+    }
+
+    &__subinfo {
+        display: inline-block;
+        font-style: italic;
+        font-size: 18px;
+        @include ui-margin(top, 1);
+    }
+
+    // .experience__info
+
+    &__info {
+        position: relative;
+        z-index: $ui-index-1;
+    }
+    p {
+        display: inline-block;
+        @include ui-margin(top, 8);
+    }
+    &__info-subtitle {
+        display: inline-block;
+        @include ui-margin(top, 2);
+    }
+}
+.experience::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0px;
+    width: 630px;
+    height: 100%;
+    background: url(./../image/home/experience/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 100% 100%;
+}

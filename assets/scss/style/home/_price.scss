@@ -1,7 +1,7 @@
 .price {
     position: relative;
     @include ui-padding(top, 15);
-    @include ui-padding(button, 21);
+    @include ui-padding(bottom, 21);
     background-color: #f3f3f3;
     &__wrapper {
         position: relative;
