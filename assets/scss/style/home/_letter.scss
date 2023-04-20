@@ -1,4 +1,15 @@
 .letter {
+    position: relative;
+    @include ui-padding(y, 15);
+    background-color: #f3f3f3;
+    .title__wrapper {
+        text-align: start;
+        width: 600px;
+        p {
+            width: 100%;
+            margin: 0;
+        }
+    }
     // .letter__wrapper
 
     &__wrapper {
@@ -12,10 +23,23 @@
     // .letter__image
 
     &__image {
+        @include ui-margin(top, 15);
     }
 
     // .letter__slider
 
     &__slider {
     }
+}
+.letter::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: -150px;
+    right: 0px;
+    width: 335px;
+    height: 296px;
+    background: url(./../image/decor/folder.png);
+    background-repeat: no-repeat;
+    background-size: contain;
 }
