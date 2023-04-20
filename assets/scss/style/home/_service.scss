@@ -1,4 +1,5 @@
 .service {
+    position: relative;
     @include ui-padding(y, 15);
     background-color: #f3f3f3;
     // .service__wrapper
@@ -27,8 +28,9 @@
         @include ui-padding(x, 7);
         @include ui-padding(top, 10);
         @include ui-padding(bottom, 8);
+        z-index: $ui-index-1;
     }
-    &__image{
+    &__image {
         display: flex;
         align-items: flex-end;
     }
@@ -37,15 +39,26 @@
     &__left {
         display: flex;
         flex-direction: column;
-        h3{
+        h3 {
             flex: 0 0 auto;
         }
-        p{
+        p {
             flex: 1 1 auto;
             @include ui-margin(top, 3);
         }
-        button{
+        button {
             flex: 0 0 auto;
         }
     }
+}
+.service::before {
+    content: "";
+    position: absolute;
+    display: block;
+    right: 5px;
+    bottom: 0px;
+    width: 155px;
+    height: 160px;
+    background: url(./../image/home/service/decor.png);
+    background-repeat: no-repeat;
 }
