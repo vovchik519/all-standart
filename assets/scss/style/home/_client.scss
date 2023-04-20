@@ -1,0 +1,93 @@
+.client {
+    @include ui-padding(y, 15);
+    background-color: #f3f3f3;
+    @include ui-padding(y, 15);
+    // .client__wrapper
+    .title__wrapper {
+        text-align: start;
+        p {
+            margin: 0;
+            width: 100%;
+        }
+    }
+    &__wrapper {
+        position: relative;
+        border-radius: 40px;
+        background: url(./../image/home/client/bg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-size: 100% 100%;
+        @include ui-padding(y, 8);
+        @include ui-padding(left, 12);
+        @include ui-padding(right, 12);
+        overflow: hidden;
+    }
+    &__wrapper::before {
+        content: "";
+        position: absolute;
+        display: block;
+        right: 0;
+        top: 0;
+        width: 233px;
+        height: 140px;
+        background: url(./../image/home/client/bg-1.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 100% 0%;
+    }
+    &__wrapper::after {
+        content: "";
+        position: absolute;
+        display: block;
+        left: 0;
+        bottom: 0;
+        width: 230px;
+        height: 140px;
+        background: url(./../image/home/client/bg-2.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 0 100%;
+    }
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        @include ui-margin(y, 1.5);
+        @include ui-margin(left, -4);
+        @include ui-margin(right, -4);
+    }
+
+    // .client__item
+
+    &__item {
+        display: flex;
+        @include ui-margin(y, 6.5);
+        @include ui-margin(left, 4);
+        @include ui-margin(right, 4);
+        p {
+            @include ui-margin(left, 3);
+        }
+    }
+
+    &__item:nth-child(1){
+        width: calc(32% - 34px);
+    }
+    &__item:nth-child(2){
+        width: calc(36% - 34px);
+    }
+    &__item:nth-child(3){
+        width: calc(32% - 34px);
+    }
+    &__item:nth-child(4){
+        width: calc(32% - 34px);
+    }
+    &__item:nth-child(5){
+        width: calc(36% - 34px);
+    }
+    &__item:nth-child(6){
+        width: calc(32% - 34px);
+    }
+    .button__wrapper {
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -1,0 +1,26 @@
+.review {
+    @include ui-padding(y, 15);
+
+    // .review__wrapper
+
+    &__wrapper {
+        position: relative;
+        display: flex;
+    }
+    .title__wrapper {
+        text-align: start;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 340px;
+        @include ui-margin(left, 3);
+        p {
+            width: 340px;
+        }
+    }
+    // .review__image
+
+    &__image {
+        width: 750px;
+    }
+}
