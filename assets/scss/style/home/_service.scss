@@ -1,0 +1,51 @@
+.service {
+    @include ui-padding(y, 15);
+    background-color: #f3f3f3;
+    // .service__wrapper
+
+    &__wrapper {
+    }
+
+    // .service__list
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        @include ui-margin(all, -3);
+        @include ui-margin(top, 5);
+    }
+
+    // .service__item
+
+    &__item {
+        background-color: white;
+        width: calc(50% - 24px);
+        height: 362px;
+        border-radius: 6px;
+        display: flex;
+        @include ui-margin(all, 3);
+        @include ui-padding(x, 7);
+        @include ui-padding(top, 10);
+        @include ui-padding(bottom, 8);
+    }
+    &__image{
+        display: flex;
+        align-items: flex-end;
+    }
+    // .service__left
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+        h3{
+            flex: 0 0 auto;
+        }
+        p{
+            flex: 1 1 auto;
+            @include ui-margin(top, 3);
+        }
+        button{
+            flex: 0 0 auto;
+        }
+    }
+}

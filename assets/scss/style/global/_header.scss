@@ -78,5 +78,8 @@
         svg {
             @include ui-margin(x, 1.5);
         }
+        .icon{
+            fill: #449EF6;
+        }
     }
 }

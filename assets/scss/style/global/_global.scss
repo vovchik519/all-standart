@@ -24,11 +24,15 @@ $ui-index-6: 6; // когда почему-то нужно перекрыть в
     @if ($direction == y) {
         margin: $ui-step * $size 0;
     }
-
+    
     @if ($direction == x) {
         margin: 0 $ui-step * $size;
     }
 
+    @if ($direction == all) {
+        margin: $ui-step * $size;
+    }
+    
     @if ($direction == bottom) {
         margin-bottom: $ui-step * $size;
     }
@@ -254,4 +258,12 @@ h3 {
     -moz-box-shadow: 0px 50px 50px 0px #ad0995 inset;
     box-shadow: 0px 50px 50px 0px #ad0995 inset;
     background: #bd1ba5;
+}
+.title__wrap {
+    text-align: center;
+    p {
+        font-size: 18px;
+        line-height: 140%;
+        @include ui-margin(top, 1);
+    }
 }
