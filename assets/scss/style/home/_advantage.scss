@@ -1,6 +1,7 @@
 .advantage {
     @include ui-padding(top, 8);
     @include ui-padding(bottom, 15);
+    overflow: hidden;
     // .advantage__wrapper
 
     &__wrapper {
