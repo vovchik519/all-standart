@@ -88,7 +88,7 @@ a:focus,
 a:active {
     outline: none;
 }
-a{
+a {
     color: $color-main;
 }
 nav,
@@ -143,12 +143,18 @@ h4,
 h5,
 h6 {
     font-size: inherit;
-    font-weight: inherit;
+    font-weight: 700;
     line-height: 1.2em;
+    color: #343434;
 }
 h1,
 h2 {
     font-family: "Minion Pro";
+    font-size: 48px;
+}
+h3 {
+    font-size: 20px;
+    line-height: 1.4em;
 }
 .container {
     max-width: 1180px;
@@ -228,24 +234,24 @@ h2 {
     background: #4197ec;
 }
 .button-pink {
-    background-color: #EE60D9;
-    -webkit-box-shadow: 0px -50px 50px 0px #7B176C inset;
-    -moz-box-shadow: 0px -50px 50px 0px #7B176C inset;
-    box-shadow: 0px -50px 50px 0px #7B176C inset;
+    background-color: #ee60d9;
+    -webkit-box-shadow: 0px -50px 50px 0px #7b176c inset;
+    -moz-box-shadow: 0px -50px 50px 0px #7b176c inset;
+    box-shadow: 0px -50px 50px 0px #7b176c inset;
 }
 
 .button-pink::before {
-    box-shadow: 0px 7px 10px 0px #9F0789;
+    box-shadow: 0px 7px 10px 0px #9f0789;
 }
 
 .button-pink::after {
-    -webkit-box-shadow: 0px 4px 0px 0px #45093C;
-    -moz-box-shadow: 0px 4px 0px 0px #45093C;
-    box-shadow: 0px 4px 0px 0px #45093C;
+    -webkit-box-shadow: 0px 4px 0px 0px #45093c;
+    -moz-box-shadow: 0px 4px 0px 0px #45093c;
+    box-shadow: 0px 4px 0px 0px #45093c;
 }
 .button-pink:hover {
-    -webkit-box-shadow: 0px 50px 50px 0px #AD0995 inset;
-    -moz-box-shadow: 0px 50px 50px 0px #AD0995 inset;
-    box-shadow: 0px 50px 50px 0px #AD0995 inset;
-    background: #BD1BA5;
+    -webkit-box-shadow: 0px 50px 50px 0px #ad0995 inset;
+    -moz-box-shadow: 0px 50px 50px 0px #ad0995 inset;
+    box-shadow: 0px 50px 50px 0px #ad0995 inset;
+    background: #bd1ba5;
 }
