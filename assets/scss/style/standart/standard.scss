@@ -1,0 +1,77 @@
+@import "./../global/_fonts.scss";
+@import "./../global/_global.scss";
+@import "./../global/_header.scss";
+@import "./../global/_feedback.scss";
+@import "./../global/_map.scss";
+@import "./../global/_footer.scss";
+
+.standard {
+    overflow-x: hidden;
+    @include ui-margin(bottom, 15);
+    .title__wrapper {
+        @include ui-margin(top, 2);
+    }
+    // .standard__info
+
+    &__info {
+        @include page-frame();
+        @include page-frame-text();
+    }
+    &__info::before {
+        content: "";
+        @include clothespin-left;
+        top: 370px;
+        left: -5px;
+    }
+    &__info::after {
+        content: "";
+        @include clothespin-right;
+        right: 40px;
+    }
+    // .standard__top
+
+    &__top {
+        @include page-frame-item();
+        p:first-child {
+            @include page-frame-text();
+            margin: 0;
+        }
+        p,
+        ul {
+            @include ui-margin(top, 4);
+        }
+        span,
+        strong {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 150%;
+            @include ui-margin(bottom, 1);
+        }
+        p {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    &__top-wrap {
+        height: 220px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        p,
+        ul {
+            width: 450px;
+        }
+        p:last-child{
+            width: 550px;
+        }
+    }
+    // .standard__bottom
+
+    &__bottom {
+        @include ui-margin(top, 4);
+        p {
+            @include page-frame-item();
+            @include ui-margin(top, 1);
+        }
+    }
+}

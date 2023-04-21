@@ -10,7 +10,7 @@
         content="Экспертные услуги по разработке стандартов и технической документации на продукцию, чтобы повысить качество и конкурентоспособность вашей продукции">
     <link rel="icon" type="image/png" href="./../assets/image/favicon.png" />
     <link rel="stylesheet" href="./../assets/libs/swiper/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="./../assets/css/style.min.css" />
+    <link rel="stylesheet" href="./../assets/css/consulting.min.css" />
     <link
         href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic"
         rel="stylesheet" />
@@ -70,9 +70,13 @@
             </div>
         </header>
         <main class="main">
-            <div class="container">
-                <section class="consulting" aria-labelledby="consulting-title">
-                    <div class="page__title">
+            <section class="consulting" aria-labelledby="consulting-title">
+                <div class="container">
+                    <ul class="page__path-list">
+                        <li class="page__path-item"><a href="/">Главная</a></li>
+                        <li class="page__path-item"><a href="./consulting.html">3 Консалтинговые услуги по стандартизации</a></li>
+                    </ul>
+                    <div class="title__wrapper">
                         <h1 id="consulting-title">3 Консалтинговые услуги по стандартизации</h1>
                         <p>Согласно Статье 19 Закона о стандартизации</p>
                     </div>
@@ -80,8 +84,8 @@
                         <div class="consulting__info">
                             <h3>3.1 Полное сопровождение разработки национальных стандартов</h3>
                             <p>(за исключением защиты стандарта по отраслям промышленности)</p>
-                            <h3>3.2 Формирование дела стандарта, включающее следующие документы</h3>
                             <ul class="consulting__list">
+                                <li class="consulting__item"><h3>3.2 Формирование дела стандарта, включающее следующие документы</h3></li>
                                 <li class="consulting__item">- ТЭО – технико-экономическое обоснование;</li>
                                 <li class="consulting__item">- уведомления о начале и завершении разработки;</li>
                                 <li class="consulting__item">- пояснительная записка;</li>
@@ -92,11 +96,57 @@
                             </ul>
                         </div>
                         <div class="consulting__image">
-                            <img src="./../assets/image/consulting/image.png" alt="ноутбук с документами и ручкой">
+                            <img src="./../assets/image/consulting/image.png" alt="ноутбук с документами и ручкой" width="473" height="373">
                         </div>
                     </div>
-                </section>
-            </div>
+                </div>
+            </section>
+            <section class="feedback" aria-labelledby="feedback-title">
+                <div class="feedback__wrapper">
+                    <div class="feedback__image">
+                        <img src="./../assets/image/home/feedback/image.png" alt="девушка с телефоном в руках"
+                            width="773" height="651">
+                    </div>
+                    <div class="container">
+                        <div class="feedback__info">
+                            <h2 id="feedback-title">Получите профессиональную поддержку</h2>
+                            <p> Мы предлагаем опыт и знания в области стандартизации, чтобы помочь вам достичь ваших
+                                целей. Начните сотрудничество с нами сегодня и получите профессиональную поддержку в
+                                разработке стандартов организации для вашего бизнеса.</p>
+                            <form action="#!">
+                                <div class="feedback__input">
+                                    <label for="home-feedback-tel">
+                                        <svg class="icon">
+                                            <use xlink:href="./../assets/icon/sprite.svg#icon-feedback-tel"></use>
+                                        </svg>
+                                    </label>
+                                    <input type="tel" placeholder="Ваш телефон" id="home-feedback-tel">
+                                </div>
+                                <div class="feedback__input">
+                                    <label for="home-feedback-name">
+                                        <svg class="icon">
+                                            <use xlink:href="./../assets/icon/sprite.svg#icon-feedback-name"></use>
+                                        </svg>
+                                    </label>
+                                    <input type="text" placeholder="Ваше имя" id="home-feedback-name">
+                                </div>
+                                <button type="button" class="button button-blue">Оставить заявку</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="map" aria-labelledby="map-title">
+                <div class="container">
+                    <div class="map__wrapper">
+                        <div class="title__wrapper">
+                            <h2 id="map-title">Где мы находимся</h2>
+                        </div>
+                        <iframe id="map_883677546" frameborder="0" width="100%" height="445"
+                            sandbox="allow-modals allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+                    </div>
+                </div>
+            </section>
         </main>
         <footer class="footer">
             <div class="container">
@@ -151,7 +201,8 @@
                             <div class="footer__bottom-company">
                                 <p>Разработка веб студии</p>
                                 <a href="https://xn--b1adeadlc3bdjl.kz/sozdanie-sajtov/lendingi/" target="_blank"><img
-                                        src="./../assets/image/company.png" alt="Продвижение кз"></a>
+                                        src="./../assets/image/company.svg" alt="Продвижение кз" width="84"
+                                        height="14"></a>
                             </div>
                         </div>
                     </div>
@@ -163,4 +214,5 @@
     <script src="./../assets/libs/swiper/swiper-bundle.min.js"></script>
     <script src="./../assets/libs/fslightbox/fslightbox.js"></script>
     <script src="./../assets/script/script.js"></script>
+    <script src="./../assets/script/map.js" async></script>
 </body>

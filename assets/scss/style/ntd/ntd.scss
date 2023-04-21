@@ -1,0 +1,56 @@
+@import "./../global/_fonts.scss";
+@import "./../global/_global.scss";
+@import "./../global/_header.scss";
+@import "./../global/_feedback.scss";
+@import "./../global/_map.scss";
+@import "./../global/_footer.scss";
+
+.ntd {
+    @include ui-padding(bottom, 15);
+    .title__wrapper {
+        @include ui-margin(top, 2);
+    }
+    &__info {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 440px;
+        @include page-frame();
+        h2 {
+            display: inline-block;
+            font-family: "Montserrat";
+            font-weight: 600;
+            @include page-frame-text();
+            @include ui-margin(bottom, 1);
+        }
+        p {
+            display: inline-block;
+            @include page-frame-item();
+        }
+    }
+    &__info::before {
+        content: "";
+        position: absolute;
+        display: block;
+        left: 304px;
+        bottom: -77px;
+        width: 155px;
+        height: 160px;
+        background: url(./../image/ntd/image.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    &__item {
+        width: 450px;
+        @include ui-margin(bottom, 4);
+        z-index: $ui-index-1;
+    }
+    &__item:nth-child(3),
+    &__item:nth-child(4) {
+        width: 550px;
+        @include ui-margin(left, 8);
+    }
+    &__item:last-child {
+        margin-bottom: 0;
+    }
+}

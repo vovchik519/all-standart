@@ -189,6 +189,7 @@ h2 {
     font-size: 48px;
 }
 h3 {
+    font-family: 'Montserrat';
     font-size: 20px;
     line-height: 1.4em;
 }
@@ -338,5 +339,31 @@ h3 {
     }
     .swiper-pagination-bullet-active {
         background: #0f6dc9;
+    }
+}
+.page {
+    // .page__path-list
+
+    &__path-list {
+        display: flex;
+        @include ui-margin(top, 2);
+    }
+
+    // .page__path-item
+
+    &__path-item {
+        display: flex;
+        @include ui-padding(right, 1);
+    }
+
+    &__path-item::after {
+        content: "-";
+        display: block;
+        @include ui-margin(left, 1);
+    }
+    &__path-item:last-child:after{
+        content: '';
+        display: none;
+        margin: 0;
     }
 }

@@ -1,0 +1,49 @@
+@import "./../global/_fonts.scss";
+@import "./../global/_global.scss";
+@import "./../global/_header.scss";
+@import "./../global/_feedback.scss";
+@import "./../global/_map.scss";
+@import "./../global/_footer.scss";
+
+.consulting {
+        @include ui-padding(bottom, 15);
+    .title__wrapper {
+        @include ui-margin(top, 2);
+    }
+    // .consulting__wrap
+
+    &__wrap {
+        display: flex;
+        @include page-frame();
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    // .consulting__info
+
+    &__info {
+        width: 400px;
+        @include ui-margin(y, 8);
+        h3 {
+            font-weight: 600;
+            @include page-frame-text();
+            @include ui-margin(bottom, 1);
+        }
+        p {
+            @include page-frame-item();
+        }
+        ul {
+            @include ui-margin(top, 4);
+        }
+    }
+    // .consulting__image
+
+    &__image {
+        @include ui-margin(left, 26);
+        img {
+            width: 473px;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+}
