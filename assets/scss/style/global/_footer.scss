@@ -1,0 +1,112 @@
+.footer {
+    // .footer__wrapper
+
+    &__wrapper {
+    }
+
+    // .footer__top
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include ui-margin(top, 3);
+        @include ui-margin(bottom, 2);
+        a {
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 130%;
+            color: #0f6dc9;
+        }
+    }
+
+    // .footer__top-left
+
+    &__top-left {
+        display: flex;
+        align-items: center;
+    }
+
+    // .footer__top-list
+
+    &__top-list {
+        display: flex;
+        align-items: center;
+    }
+
+    // .footer__top-item
+
+    &__top-item {
+        @include ui-margin(left, 3);
+        .icon {
+            fill: #449ef6;
+        }
+    }
+
+    // .footer__main
+
+    &__main {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    // .footer__logo
+
+    &__logo {
+    }
+
+    // .footer__main-list
+
+    &__main-list {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 100px;
+        width: 50%;
+    }
+
+    // .footer__item
+    &__item {
+        @include ui-margin(top, 5);
+        @include ui-margin(left, 10);
+    }
+
+    // .footer__bottom
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include ui-margin(top, 3);
+        @include ui-margin(bottom, 2);
+    }
+
+    // .footer__bottom-right
+
+    &__bottom-right {
+        display: flex;
+        align-items: center;
+        span{
+            @include ui-margin(right, 4);
+        }
+    }
+
+    // .footer__bottom-company
+
+    &__bottom-company {
+        display: flex;
+        align-items: center;
+        p{
+            @include ui-margin(right, 1);
+        }
+        a{
+            display: flex;
+            align-items: center;
+        }
+        img{
+            width: 100px;
+            height: 20px;
+        }
+    }
+}

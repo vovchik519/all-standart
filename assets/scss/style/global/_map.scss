@@ -1,0 +1,9 @@
+.map {
+    @include ui-padding(top, 15);
+    @include ui-padding(bottom, 2);
+    background-color: #f3f3f3;
+    // .map__wrapper
+    .title__wrapper{
+        @include ui-margin(bottom, 5);
+    }
+}
