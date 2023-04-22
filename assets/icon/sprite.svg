@@ -92,4 +92,21 @@
                 stroke="#343434" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
         </g>
     </symbol>
+
+    <symbol id="icon-chevron" viewBox="0 0 24 24">
+        <g>
+            <path d="M15.4023 6L9.45544 12L15.4023 18" stroke="#343434" stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+        </g>
+    </symbol>
+
+    <symbol id="icon-chevrons" viewBox="0 0 24 24">
+        <g>
+            <path d="M10.7363 17L5.78058 12L10.7363 7" stroke="#343434" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M17.6738 17L12.7181 12L17.6738 7" stroke="#343434" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+        </g>
+    </symbol>
 </svg>

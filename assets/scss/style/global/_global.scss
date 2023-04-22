@@ -104,6 +104,18 @@ $ui-index-6: 6; // когда почему-то нужно перекрыть в
     }
 }
 
+@mixin restrick-text() {
+    overflow: hidden;
+    display: block;
+    max-height: 1.5rem;
+    -webkit-line-clamp: 1;
+    display: box;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -189,7 +201,7 @@ h2 {
     font-size: 48px;
 }
 h3 {
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     font-size: 20px;
     line-height: 1.4em;
 }
@@ -346,7 +358,7 @@ h3 {
 
     &__path-list {
         display: flex;
-        @include ui-margin(top, 2);
+        @include ui-padding(top, 2);
     }
 
     // .page__path-item
@@ -361,9 +373,66 @@ h3 {
         display: block;
         @include ui-margin(left, 1);
     }
-    &__path-item:last-child:after{
-        content: '';
+    &__path-item:last-child:after {
+        content: "";
         display: none;
         margin: 0;
+    }
+    // .page__pagination
+
+    &__pagination {
+        @include ui-padding(y, 1.5);
+        @include ui-margin(top, 5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        .icon {
+            fill: transparent;
+        }
+        button {
+            background: transparent;
+        }
+    }
+
+    // .page__pagination-arrow-right
+
+    &__pagination-arrow-left {
+        display: flex;
+        .icon:first-child {
+            @include ui-margin(right, 2);
+        }
+    }
+
+    // .page__pagination-number
+
+    &__pagination-number {
+        display: flex;
+        align-items: center;
+        max-width: 280px;
+        @include ui-padding(x, 3);
+        button {
+            @include ui-padding(x, 4);
+        }
+    }
+
+    &__pagination-number .active {
+        border: 1px solid #343434;
+        border-radius: 2px;
+        @include ui-padding(top, 2);
+        @include ui-padding(bottom, 2);
+    }
+
+    // .page__pagination-arrow-left
+
+    &__pagination-arrow-right {
+        display: flex;
+        align-items: center;
+        .icon:first-child {
+            @include ui-margin(right, 2);
+        }
+        .icon {
+            transform: rotate(180deg);
+        }
     }
 }

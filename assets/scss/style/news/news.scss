@@ -1,0 +1,59 @@
+@import "./../global/_fonts.scss";
+@import "./../global/_global.scss";
+@import "./../global/_header.scss";
+@import "./../global/_feedback.scss";
+@import "./../global/_map.scss";
+@import "./../global/_footer.scss";
+.news {
+    @include ui-padding(bottom, 19);
+    background-color: #f3f3f3;
+    .title__wrapper {
+        text-align: start;
+        @include ui-margin(top, 3);
+        h2 {
+            margin: 0;
+            height: 0;
+            line-height: 0;
+            font-size: 0;
+            visibility: hidden;
+        }
+    }
+    // .news__list
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -4px;
+        @include ui-margin(top, 4);
+    }
+
+    // .news__item
+
+    &__item {
+        @include ui-padding(y, 2);
+        @include ui-padding(left, 2);
+        @include ui-padding(right, 2);
+        background: #ffffff;
+        border-radius: 6px;
+        width: calc(25% - 8px);
+        margin: 4px;
+        h3 {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 150%;
+            @include ui-margin(top, 3);
+
+            @include restrick-text();
+        }
+        p {
+            @include page-frame-item();
+            @include restrick-text();
+            @include ui-margin(top, 2);
+        }
+        img {
+            width: 100%;
+            height: 175px;
+            object-fit: cover;
+        }
+    }
+}
