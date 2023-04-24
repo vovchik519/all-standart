@@ -3,7 +3,46 @@
     @include ui-padding(bottom, 2);
     background-color: #f3f3f3;
     // .map__wrapper
-    .title__wrapper{
+    .title__wrapper {
         @include ui-margin(bottom, 5);
+    }
+    &__wrapper {
+        position: relative;
+    }
+    &__contact {
+        position: absolute;
+        top: 125px;
+        left: 60px;
+        display: flex;
+        flex-direction: column;
+        background: #ffffff;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+        border-radius: 6px;
+        width: 345px;
+        @include ui-padding(all, 4);
+        font-style: normal;
+    }
+    &__contact-item:first-child {
+        margin: 0;
+    }
+    &__contact-item {
+        display: flex;
+        text-align: center;
+        @include ui-margin(top, 4);
+        a,
+        p {
+            font-size: 18px;
+            line-height: 22px;
+            color: #1c1d1d;
+            text-align: start;
+        }
+        .icon {
+            @include ui-margin(right, 2);
+            background-color: white;
+            fill: transparent;
+            width: 19px;
+            height: 19px;
+            flex: 0 0 19px;
+        }
     }
 }

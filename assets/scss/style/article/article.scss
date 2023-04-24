@@ -1,0 +1,54 @@
+@import "./../global/_fonts.scss";
+@import "./../global/_global.scss";
+@import "./../global/_header.scss";
+@import "./../global/_feedback.scss";
+@import "./../global/_map.scss";
+@import "./../global/_footer.scss";
+
+.article {
+    @include ui-padding(bottom, 13);
+    background-color: #f3f3f3;
+    .title__wrapper {
+        text-align: start;
+        @include ui-margin(top, 3);
+        h1 {
+            font-size: 32px;
+            line-height: 88%;
+        }
+    }
+    // .article__list
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        @include ui-margin(top, 6);
+    }
+
+    // .article__item
+
+    &__item {
+        @include ui-margin(top, 2);
+        @include ui-padding(all, 4);
+        background: #ffffff;
+        border-radius: 6px;
+        font-size: 16px;
+        line-height: 130%;
+        color: #5b5b5b;
+        span,
+        a {
+            display: block;
+            @include ui-margin(top, 2);
+        }
+        a {
+            color: #449ef6;
+        }
+        h3 {
+            font-family: "Montserrat";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 130%;
+            color: #343434;
+        }
+    }
+}

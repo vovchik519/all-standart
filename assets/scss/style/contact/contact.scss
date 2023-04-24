@@ -1,0 +1,22 @@
+@import "./../global/_fonts.scss";
+@import "./../global/_global.scss";
+@import "./../global/_header.scss";
+@import "./../global/_feedback.scss";
+@import "./../global/_map.scss";
+@import "./../global/_footer.scss";
+
+.contact {
+    background-color: #f3f3f3;
+    .title__wrapper {
+        text-align: start;
+        @include ui-margin(top, 3);
+        h1 {
+            font-size: 32px;
+            line-height: 88%;
+        }
+    }
+    .map__wrapper {
+        margin: 0 -20px -8px;
+        @include ui-margin(top, 7);
+    }
+}
