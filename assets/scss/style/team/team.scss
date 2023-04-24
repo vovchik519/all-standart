@@ -1,0 +1,131 @@
+@import "./../global/_fonts.scss";
+@import "./../global/_global.scss";
+@import "./../global/_header.scss";
+@import "./../global/_feedback.scss";
+@import "./../global/_map.scss";
+@import "./../global/_footer.scss";
+.team {
+    @include ui-padding(bottom, 16);
+    background-color: #f3f3f3;
+    .title__wrapper {
+        text-align: start;
+        @include ui-margin(top, 3);
+        h1 {
+            font-size: 32px;
+            line-height: 88%;
+        }
+    }
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 22px -10px -10px;
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        background: #ffffff;
+        border-radius: 10px;
+        margin: 10px;
+        width: calc(25% - 20px);
+        img {
+            width: 100%;
+            height: 313px;
+            object-fit: cover;
+        }
+    }
+    &__item-info {
+        display: flex;
+        flex-direction: column;
+        @include ui-padding(all, 5);
+        height: 100%;
+        span {
+            @include ui-padding(y, 1);
+            line-height: 1em;
+            color: #2f2f2f;
+            font-size: 16px;
+        }
+    }
+    &__item-name {
+        font-weight: 700;
+        font-size: 20px;
+    }
+    &__item-blue {
+        font-weight: 700;
+        color: #3f93e5 !important;
+    }
+    .button {
+        width: 100%;
+        font-size: 14px;
+        line-height: 1.2em;
+        font-weight: 400;
+        min-height: 87px;
+    }
+    &__popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        max-width: 700px;
+        max-height: 70vh;
+        height: auto;
+        overflow-y: auto;
+        @include ui-padding(all, 8);
+        background-color: white;
+        scrollbar-width: thin;
+        scrollbar-color: #d3d3d3 #f0f0f0;
+        z-index: $ui-index-5;
+        border-radius: 6px;
+        h2 {
+            font-family: "Montserrat";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 120%;
+        }
+        p {
+            font-size: 16px;
+            line-height: 150%;
+            @include ui-margin(top, 4);
+        }
+        .button {
+            @include ui-margin(top, 8);
+        }
+    }
+    /* Стилизуем цвет скролла */
+    &__popup::-webkit-scrollbar {
+        width: 6px;
+        background-color: #f0f0f0;
+    }
+
+    &__popup::-webkit-scrollbar-thumb {
+        background-color: #d3d3d3;
+    }
+    &__popup.active {
+        display: block;
+    }
+    &__popup-close {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        background-color: transparent;
+    }
+    &__popup-bottom {
+        display: block;
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    &__popup-bottom::before {
+        content: "";
+        position: absolute;
+        display: block;
+        right: -32px;
+        bottom: -32px;
+        width: 225px;
+        height: 158px;
+        background: url(./../image/team/decor.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}

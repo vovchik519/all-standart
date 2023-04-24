@@ -47,3 +47,45 @@ var swiperTrust = new Swiper(".trust__slider", {
         disableOnInteraction: false,
     },
 });
+
+const buttons = document.querySelectorAll('.team__popup-btn');
+const closeButtons = document.querySelectorAll('.team__popup-close');
+
+// Function to remove 'active' class from all team__popup elements
+const removeActiveClass = () => {
+    const popups = document.querySelectorAll('.team__popup');
+    popups.forEach(popup => {
+        popup.classList.remove('active');
+    });
+};
+
+// Function to remove 'body-lock' class from body element
+const removeBodyLockClass = () => {
+    document.body.classList.remove('body-lock');
+};
+
+// Add click event listener to each button
+buttons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+        // Add 'body-lock' class to body element
+        document.body.classList.add('body-lock');
+
+        // Remove 'active' class from all team__popup elements
+        removeActiveClass();
+
+        // Add 'active' class to the corresponding team__popup element
+        const popup = document.querySelectorAll('.team__popup')[index];
+        popup.classList.add('active');
+    });
+});
+
+// Add click event listener to each close button
+closeButtons.forEach(closeButton => {
+    closeButton.addEventListener('click', () => {
+        // Remove 'active' class from all team__popup elements
+        removeActiveClass();
+
+        // Remove 'body-lock' class from body element
+        removeBodyLockClass();
+    });
+});

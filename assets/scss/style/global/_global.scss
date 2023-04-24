@@ -2,8 +2,8 @@ $ui-step: 4px;
 
 $ui-index-1: 1;
 $ui-index-2: 2; // 0-2 которые наползают друг на друга в общем потоке
-$ui-index-3: 3; // затемняющий и блюруших масок
-$ui-index-4: 4; // для сайдбаров
+$ui-index-3: 3; // для сайдбаров
+$ui-index-4: 4; // затемняющий и блюруших масок
 $ui-index-5: 5; // для попап окон
 $ui-index-6: 6; // когда почему-то нужно перекрыть все приложение
 
@@ -85,6 +85,9 @@ $ui-index-6: 6; // когда почему-то нужно перекрыть в
 
     @if ($direction == y) {
         padding: $ui-step * $size 0;
+    }
+    @if ($direction == all) {
+        padding: $ui-step * $size;
     }
 
     @if ($direction == x) {
@@ -225,6 +228,20 @@ h3 {
 .footer {
     flex: 0 0 auto;
 }
+body.body-lock {
+    overflow: hidden;
+}
+body.body-lock::before {
+    content: "";
+    position: fixed;
+    display: block;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.56);
+    z-index: $ui-index-4;
+}
 .icon {
     width: 28px;
     height: 28px;
@@ -358,6 +375,7 @@ h3 {
 
     &__path-list {
         display: flex;
+        flex-wrap: wrap;
         @include ui-padding(top, 2);
     }
 
@@ -366,6 +384,8 @@ h3 {
     &__path-item {
         display: flex;
         @include ui-padding(right, 1);
+        font-size: 12px;
+        line-height: 130%;
     }
 
     &__path-item::after {
