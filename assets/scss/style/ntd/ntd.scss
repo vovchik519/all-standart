@@ -12,9 +12,10 @@
     }
     &__info {
         display: flex;
-        flex-direction: column;
         flex-wrap: wrap;
-        height: 440px;
+        justify-content: space-between;
+        width: 100%;
+        height: auto;
         @include page-frame();
         h2 {
             display: inline-block;
@@ -40,17 +41,66 @@
         background-repeat: no-repeat;
         background-size: contain;
     }
+    &__wrap {
+        width: 47%;
+    }
+    &__wrap:nth-child(2) {
+        width: 50%;
+    }
     &__item {
-        width: 450px;
+        width: 100%;
         @include ui-margin(bottom, 4);
         z-index: $ui-index-1;
     }
     &__item:nth-child(3),
     &__item:nth-child(4) {
-        width: 550px;
         @include ui-margin(left, 8);
     }
     &__item:last-child {
         margin-bottom: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .ntd {
+        @include mobile-padding(bottom, 7);
+        .title__wrapper {
+            @include mobile-margin(top, 2);
+        }
+        &__info {
+            @include page-mobile-frame();
+            h2 {
+                @include page-mobile-frame-text();
+                @include mobile-margin(bottom, 1);
+            }
+            p {
+                display: inline-block;
+                @include page-mobile-frame-item();
+            }
+        }
+        &__info::before {
+            content: "";
+            left: auto;
+            right: 0;
+            bottom: 0;
+            width: 45vw;
+            height: 20vw;
+        }
+        &__wrap {
+            width: 100%;
+        }
+        &__wrap:nth-child(2) {
+            width: 100%;
+        }
+        &__item {
+            position: relative;
+            width: 100%;
+            @include mobile-margin(bottom, 4);
+            z-index: $ui-index-1;
+        }
+        &__item:nth-child(3),
+        &__item:nth-child(4) {
+            @include mobile-margin(left, 8);
+        }
     }
 }

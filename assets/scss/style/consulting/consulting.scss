@@ -6,7 +6,7 @@
 @import "./../global/_footer.scss";
 
 .consulting {
-        @include ui-padding(bottom, 15);
+    @include ui-padding(bottom, 15);
     .title__wrapper {
         @include ui-margin(top, 2);
     }
@@ -44,6 +44,58 @@
             width: 473px;
             height: 100%;
             object-fit: contain;
+        }
+    }
+}
+@media (max-width: 1080px) {
+    .consulting__wrap {
+        flex-direction: column;
+    }
+    .consulting__info {
+        width: 100%;
+    }
+    .consulting__image {
+        display: flex;
+        margin-left: 0;
+        justify-content: flex-end;
+    }
+}
+@media (max-width: 768px) {
+    .consulting {
+        @include mobile-padding(bottom, 7);
+        .title__wrapper {
+            @include mobile-margin(top, 2);
+        }
+        // .consulting__wrap
+
+        &__wrap {
+            @include page-mobile-frame();
+        }
+
+        // .consulting__info
+
+        &__info {
+            width: 100%;
+            @include mobile-margin(y, 4);
+            h3 {
+                @include page-mobile-frame-text();
+                @include mobile-margin(bottom, 1);
+            }
+            p {
+                @include page-mobile-frame-item();
+            }
+            ul {
+                @include mobile-margin(top, 4);
+            }
+        }
+        // .consulting__image
+
+        &__image {
+            @include mobile-margin(left, 0);
+            img {
+                width: 100%;
+                height: auto;
+            }
         }
     }
 }

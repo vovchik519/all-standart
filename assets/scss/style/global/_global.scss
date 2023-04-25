@@ -205,6 +205,18 @@ $mobile-step: 1.111vw;
     white-space: normal;
 }
 
+@mixin restrick-text-2() {
+    overflow: hidden;
+    display: block;
+    max-height: 3rem;
+    -webkit-line-clamp: 2;
+    display: box;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -520,6 +532,9 @@ body.body-lock::before {
         button {
             @include ui-padding(x, 4);
         }
+        span {
+            @include ui-margin(left, 4);
+        }
     }
 
     &__pagination-number .active {
@@ -578,6 +593,60 @@ body.body-lock::before {
 
         &__path-item::after {
             @include mobile-margin(left, 1);
+        }
+
+        &__pagination {
+            @include mobile-padding(y, 1.5);
+            @include mobile-margin(top, 5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            .icon {
+                fill: transparent;
+            }
+            button {
+                background: transparent;
+            }
+        }
+
+        // .page__pagination-arrow-right
+
+        &__pagination-arrow-left {
+            display: flex;
+            .icon:first-child {
+                @include mobile-margin(right, 2);
+            }
+        }
+
+        // .page__pagination-number
+
+        &__pagination-number {
+            max-width: 50vw;
+            @include mobile-padding(x, 2);
+            button {
+                @include mobile-padding(x, 2);
+            }
+            button:nth-child(5) {
+                display: none;
+            }
+            span {
+                @include mobile-margin(left, 2);
+            }
+        }
+
+        &__pagination-number .active {
+            border-radius: 0.556vw;
+            @include mobile-padding(top, 1);
+            @include mobile-padding(bottom, 1);
+        }
+
+        // .page__pagination-arrow-left
+
+        &__pagination-arrow-right {
+            .icon:first-child {
+                @include mobile-margin(right, 2);
+            }
         }
     }
     .title__wrapper {

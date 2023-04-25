@@ -57,6 +57,8 @@
     // .footer__logo
 
     &__logo {
+        width: 126px;
+        height: 111px;
     }
 
     // .footer__main-list
@@ -110,6 +112,7 @@
         img {
             width: 100px;
             height: 20px;
+            margin-top: 2.9px;
         }
     }
 }
@@ -195,7 +198,7 @@
             width: 100%;
         }
 
-        &__item:first-child{
+        &__item:first-child {
             margin: 0;
         }
         // .footer__item
@@ -222,7 +225,7 @@
             span {
                 @include mobile-margin(right, 4);
             }
-            img{
+            img {
                 width: 11.111vw;
                 height: 3.889vw;
             }
@@ -234,15 +237,16 @@
             display: flex;
             align-items: center;
             p {
-                @include ui-margin(right, 1);
+                @include mobile-margin(right, 1);
             }
             a {
                 display: flex;
                 align-items: center;
             }
             img {
-                width: 100px;
-                height: 20px;
+                width: 20vw;
+                height: 5.556vw;
+                margin-top: 0.556vw;
             }
         }
     }
