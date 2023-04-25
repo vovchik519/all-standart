@@ -59,9 +59,9 @@
         flex-wrap: wrap;
         p,
         ul {
-            width: 450px;
+            max-width: 470px;
         }
-        p:last-child{
+        p:last-child {
             width: 550px;
         }
     }
@@ -72,6 +72,88 @@
         p {
             @include page-frame-item();
             @include ui-margin(top, 1);
+        }
+    }
+}
+@media (max-width: 1080px) {
+    .standard {
+        &__top-wrap {
+            height: auto;
+        }
+        &__top-wrap p,
+        &__top-wrap ul {
+            max-width: 80%;
+        }
+        &__info::before {
+            content: "";
+            @include clothespin-mobile-left;
+            top: 370px;
+            left: -5px;
+        }
+        &__info::after {
+            content: "";
+            @include clothespin-mobile-right;
+            right: 40px;
+        }
+    }
+}
+@media (max-width: 768px) {
+    .standard {
+        @include mobile-margin(bottom, 7);
+        .title__wrapper {
+            @include mobile-margin(top, 2);
+        }
+        // .standard__info
+
+        &__info {
+            @include page-mobile-frame();
+            @include page-mobile-frame-text();
+        }
+        &__info::before {
+            content: "";
+            top: 102.778vw;
+            left: -1.389vw;
+        }
+        &__info::after {
+            content: "";
+            right: 11.111vw;
+        }
+        // .standard__top
+
+        &__top {
+            @include page-mobile-frame-item();
+            p:first-child {
+                @include page-mobile-frame-text();
+                margin: 0;
+            }
+            p,
+            ul {
+                @include mobile-margin(top, 4);
+            }
+            span,
+            strong {
+                font-size: 5vw;
+                @include mobile-margin(bottom, 1);
+            }
+        }
+        &__top-wrap {
+            height: auto;
+            p,
+            ul {
+                max-width: 100%;
+            }
+            p:last-child {
+                width: 100%;
+            }
+        }
+        // .standard__bottom
+
+        &__bottom {
+            @include mobile-margin(top, 4);
+            p {
+                @include page-mobile-frame-item();
+                @include mobile-margin(top, 1);
+            }
         }
     }
 }

@@ -2,6 +2,9 @@
     @include ui-padding(top, 15);
     @include ui-padding(bottom, 2);
     background-color: #f3f3f3;
+    iframe{
+        max-height: 70vh;
+    }
     // .map__wrapper
     .title__wrapper {
         @include ui-margin(bottom, 5);
@@ -43,6 +46,41 @@
             width: 19px;
             height: 19px;
             flex: 0 0 19px;
+        }
+    }
+}
+@media (max-width: 768px) {
+    .map {
+        @include mobile-padding(top, 7);
+        @include mobile-padding(bottom, 2);
+        &__content{
+            display: flex;
+            flex-direction: column-reverse
+        }
+        .title__wrapper {
+            @include mobile-margin(bottom, 5);
+        }
+        &__contact {
+            position: static;
+            box-shadow: 0px 0.556vw 2.778vw rgba(0, 0, 0, 0.15);
+            border-radius: 1.667vw;
+            width: 100%;
+            @include mobile-padding(all, 4);
+            @include mobile-margin(top, 3);
+        }
+        &__contact-item {
+            @include mobile-margin(top, 4);
+            a,
+            p {
+                font-size: 5vw;
+                line-height: 6.111vw;
+            }
+            .icon {
+                @include mobile-margin(right, 2);
+                width: 5.278vw;
+                height: 5.278vw;
+                flex: 0 0 5.278vw;
+            }
         }
     }
 }
