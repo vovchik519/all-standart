@@ -45,6 +45,7 @@
     &__logo {
         width: 67px;
         height: 60px;
+        object-fit: contain;
     }
 
     // .header__list
@@ -60,12 +61,57 @@
     // .header__item
 
     &__item {
+        position: relative;
         @include ui-margin(x, 4);
+        cursor: pointer;
         a {
             transition: 0.3s;
         }
         a:hover {
             color: #449ef6;
+        }
+    }
+    &__item-list-wrap {
+        position: absolute;
+        top: 0px;
+        left: 0;
+        transform: scale(0);
+        @include ui-padding(top, 11);
+        cursor: default;
+    }
+    &__item-list {
+        background: #ffffff;
+        width: 300px;
+        @include ui-margin(all, -11);
+        border-top: 4px solid #0f6dc9;
+        box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.28);
+        border-radius: 0px 0px 6px 6px;
+    }
+    &__item-list-item {
+        font-size: 10px;
+        line-height: 1em;
+        color: #343434;
+        border-bottom: 1px solid #f1f1f1;
+
+        @include ui-padding(y, 2);
+        @include ui-padding(left, 2);
+        @include ui-padding(right, 6);
+    }
+    &__item-list-item:last-child {
+        border-bottom: none;
+    }
+    &__item:hover &__item-list-wrap {
+        animation: menuAnim 0.3s ease forwards; /* Применяем анимацию выскакивания */
+    }
+    &__item-list-wrap:hover {
+        animation: menuAnim 0.3s ease forwards; /* Применяем анимацию выскакивания */
+    }
+    @keyframes menuAnim {
+        0% {
+            transform: scale(0);
+        }
+        100% {
+            transform: scale(1);
         }
     }
 
@@ -78,8 +124,329 @@
         svg {
             @include ui-margin(x, 1.5);
         }
-        .icon{
-            fill: #449EF6;
+        .icon {
+            fill: #449ef6;
         }
+    }
+    .menu-burger,
+    &__main-call,
+    &__social-popup,
+    &__address-popup {
+        display: none;
+    }
+}
+@media (max-width: 1080px) {
+    body.body-lock-menu {
+        overflow: hidden;
+        .header {
+            z-index: auto;
+        }
+    }
+    body.body-lock-menu::before {
+        content: "";
+        position: fixed;
+        display: block;
+        top: 0px;
+        left: 0px;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0);
+        z-index: $ui-index-4;
+    }
+    .header {
+        .menu__burger {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            padding: 0;
+            z-index: $ui-index-5;
+            svg {
+                width: 32px;
+                height: 32px;
+            }
+        }
+        .line {
+            fill: none;
+            stroke: #343434;
+            stroke-width: 6;
+            transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+                stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 5px;
+        }
+        .line1 {
+            stroke-dasharray: 60 207;
+            stroke-width: 6;
+        }
+        .line2 {
+            stroke-dasharray: 60 60;
+            stroke-width: 6;
+        }
+        .line3 {
+            stroke-dasharray: 60 207;
+            stroke-width: 6;
+        }
+        .opened .line1 {
+            stroke-dasharray: 90 207;
+            stroke-dashoffset: -134;
+            stroke-width: 6;
+        }
+        .opened .line2 {
+            stroke-dasharray: 1 60;
+            stroke-dashoffset: -30;
+            stroke-width: 6;
+        }
+        .opened .line3 {
+            stroke-dasharray: 90 207;
+            stroke-dashoffset: -134;
+            stroke-width: 6;
+        }
+        &__main-right {
+            display: flex;
+            align-items: center;
+        }
+        &__social {
+            @include ui-margin(left, 2);
+        }
+        &__main-right {
+            display: flex;
+            align-items: center;
+        }
+        &__popup {
+            display: none;
+        }
+        &__popup.active {
+            position: absolute;
+            display: block;
+            top: 104px;
+            right: 0;
+            width: 400px;
+            max-height: 70vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            transform: translateX(100%);
+            background-color: white;
+            z-index: $ui-index-5;
+            animation: menuAnim 0.3s ease-in-out forwards;
+            scrollbar-width: thin;
+            scrollbar-color: #d3d3d3 #f0f0f0;
+            .header__list,
+            .header__address-popup,
+            .header__social-popup {
+                display: block;
+            }
+        }
+        &__popup::-webkit-scrollbar {
+            width: 6px;
+            background-color: #f0f0f0;
+        }
+
+        &__popup::-webkit-scrollbar-thumb {
+            background-color: #d3d3d3;
+        }
+        @keyframes menuAnim {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+        &__list {
+            margin: 0;
+        }
+        &__item {
+            @include ui-padding(y, 5);
+            @include ui-padding(left, 10);
+            @include ui-padding(right, 5);
+            margin: 0;
+        }
+        &__social-popup {
+            @include ui-padding(y, 5);
+            @include ui-padding(left, 10);
+            @include ui-padding(right, 5);
+            .icon {
+                @include ui-margin(x, 3);
+                fill: #449ef6;
+            }
+        }
+        &__address-popup {
+            @include ui-padding(y, 5);
+            @include ui-padding(left, 10);
+            @include ui-padding(right, 5);
+        }
+        &__item-list-wrap {
+            position: static;
+            transform: scale(1);
+            height: 0;
+            overflow: hidden;
+            @include ui-padding(y, 0);
+        }
+        &__item:hover &__item-list-wrap {
+            animation: menuAnimMob 0.3s ease forwards; /* Применяем анимацию выскакивания */
+        }
+        &__item-list-wrap:hover {
+            animation: menuAnimMob 0.3s ease forwards; /* Применяем анимацию выскакивания */
+        }
+        @keyframes menuAnimMob {
+            0% {
+                height: 0;
+                @include ui-padding(y, 0);
+            }
+            100% {
+                @include ui-padding(y, 5);
+                height: auto;
+            }
+        }
+        .header__item-list {
+            background: #fff;
+            width: 100%;
+            margin: 0;
+            border-top: none;
+            box-shadow: none;
+            border-radius: 0;
+        }
+        .header__item-list-item {
+            display: flex;
+            font-size: 14px;
+            line-height: 1em;
+            color: #343434;
+            border-bottom: 1px solid #f1f1f1;
+
+            @include ui-padding(y, 2);
+            @include ui-padding(left, 4);
+            @include ui-padding(right, 6);
+        }
+        .header__item-list-item::before {
+            content: "-";
+            display: block;
+            @include ui-padding(right, 2);
+        }
+    }
+}
+@media (max-width: 769px) {
+    .header {
+        &__main-call {
+            display: block;
+            fill: transparent;
+            .icon {
+                width: 8.889vw;
+                height: 8.889vw;
+            }
+        }
+        &__main-left {
+            order: 2;
+        }
+        &__main-right {
+            order: 1;
+        }
+        &__main-call {
+            order: 3;
+        }
+        &__social,
+        &__supinfo-wrap {
+            display: none;
+        }
+        &__popup.active {
+            top: 19.5vw;
+            left: 0;
+            width: 77.778vw;
+            transform: translateX(-100%);
+        }
+        &__logo {
+            width: 19.722vw;
+            height: 17.5vw;
+        }
+        @keyframes menuAnim {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+    }
+    //
+
+    .header {
+        .menu__burger {
+            svg {
+                width: 10.889vw;
+                height: 10.889vw;
+            }
+        }
+        &__supinfo {
+            @include mobile-padding(y, 1);
+            font-size: 4.444vw;
+            p {
+                line-height: 5vw;
+            }
+            a {
+                line-height: 5.556vw;
+            }
+            .icon {
+                @include mobile-margin(right, 1);
+            }
+        }
+
+        // .header__main
+
+        &__main {
+            @include mobile-padding(y, 1);
+        }
+
+        // .header__list
+
+        &__list {
+            @include mobile-margin(x, -4);
+            @include mobile-margin(left, 0);
+        }
+
+        // .header__item
+
+        &__item {
+            @include mobile-margin(x, 4);
+        }
+        &__item-list-wrap {
+            @include mobile-padding(top, 0);
+        }
+        &__item-list {
+            width: 100%;
+            @include mobile-margin(all, -11);
+            border-top: 1.111vw solid #0f6dc9;
+            box-shadow: 0px 0.556vw 4.167vw rgba(0, 0, 0, 0.28);
+            border-radius: 0px 0px 1.667vw 1.667vw;
+        }
+        &__social {
+            @include mobile-margin(x, -1.5);
+            svg {
+                @include mobile-margin(x, 1.5);
+            }
+        }
+        &__item {
+            @include mobile-padding(y, 3);
+            @include mobile-padding(left, 5);
+            @include mobile-padding(right, 5);
+        }
+        &__social-popup {
+            @include mobile-padding(y, 3);
+            @include mobile-padding(left, 5);
+            @include mobile-padding(right, 5);
+            .icon {
+                @include mobile-margin(x, 2);
+            }
+        }
+        &__address-popup {
+            @include mobile-padding(y, 3);
+            @include mobile-padding(left, 5);
+            @include mobile-padding(right, 5);
+        }
+    }
+    .header .header__item-list-item {
+        font-size: 3.5vw;
+
+        @include mobile-padding(y, 2);
+        @include mobile-padding(left, 2);
+        @include mobile-padding(right, 6);
     }
 }

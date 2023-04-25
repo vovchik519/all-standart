@@ -89,3 +89,28 @@ closeButtons.forEach(closeButton => {
         removeBodyLockClass();
     });
 });
+
+let bodyOverflow = document.querySelector('body');
+let menuBtn = document.querySelector('.menu__burger');
+let headerPopup = document.querySelector('.header__popup');
+let bodyLockMenu = document.querySelector('.body-lock-menu');
+menuBtn.addEventListener('click', function () {
+    menuBtn.classList.toggle('opened');
+    headerPopup.classList.toggle('active');
+    bodyOverflow.classList.toggle('body-lock-menu');
+    let isExpanded = menuBtn.classList.contains('opened');
+    menuBtn.setAttribute('aria-expanded', isExpanded);
+});
+
+let closeMenu = document.querySelectorAll('.close-menu');
+
+closeMenu.forEach(function (item) {
+    item.addEventListener('click', function () {
+        // Remove the active classes and body lock class
+        menuBtn.classList.remove('opened');
+        headerPopup.classList.remove('active');
+        bodyLockMenu.classList.remove('lock');
+        let isExpanded = menuBtn.classList.contains('opened');
+        menuBtn.setAttribute('aria-expanded', isExpanded);
+    });
+});
