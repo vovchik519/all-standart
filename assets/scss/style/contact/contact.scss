@@ -20,3 +20,19 @@
         @include ui-margin(top, 7);
     }
 }
+@media (max-width: 768px) {
+    .contact {
+        @include ui-padding(bottom, 3);
+        .title__wrapper {
+            @include mobile-margin(top, 3);
+            h1 {
+                font-size: 32px;
+                line-height: 88%;
+            }
+        }
+        .map__wrapper {
+            margin: 0;
+            @include mobile-margin(top, 7);
+        }
+    }
+}

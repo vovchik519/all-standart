@@ -52,3 +52,35 @@
         }
     }
 }
+@media (max-width: 768px) {
+    .article {
+        @include mobile-padding(bottom, 7);
+        .title__wrapper {
+            @include mobile-margin(top, 3);
+            h1 {
+                font-size: 8.889vw;
+            }
+        }
+        // .article__list
+
+        &__list {
+            @include mobile-margin(top, 6);
+        }
+
+        // .article__item
+
+        &__item {
+            @include mobile-margin(top, 2);
+            @include mobile-padding(all, 4);
+            border-radius: 1.667vw;
+            font-size: 4vw;
+            span,
+            a {
+                @include mobile-margin(top, 2);
+            }
+            h3 {
+                font-size: 4.5vw;
+            }
+        }
+    }
+}
