@@ -33,6 +33,9 @@
     &__image {
         display: flex;
         align-items: flex-end;
+        .button {
+            display: none;
+        }
     }
     // .service__left
 
@@ -62,4 +65,77 @@
     background: url(./../image/home/service/decor.png);
     background-repeat: no-repeat;
     background-size: contain;
+}
+@media (max-width: 1200px) {
+    .service {
+        &__item {
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            .button {
+                display: none;
+            }
+        }
+        &__left {
+            height: 100%;
+        }
+        &__image {
+            display: flex;
+            flex-direction: column;
+            .button {
+                display: block;
+                @include ui-margin(top, 3);
+            }
+        }
+    }
+}
+@media (max-width: 768px) {
+    .service {
+        @include mobile-padding(y, 7);
+        // .service__list
+
+        &__list {
+            @include mobile-margin(all, 0);
+            @include mobile-margin(y, -3);
+            @include mobile-margin(top, 5);
+        }
+
+        // .service__item
+
+        &__item {
+            width: 100%;
+            height: auto;
+            border-radius: 1.667vw;
+            @include mobile-margin(all, 0);
+            @include mobile-margin(y, 3);
+            @include mobile-padding(x, 7);
+            @include mobile-padding(top, 7);
+            @include mobile-padding(bottom, 7);
+        }
+        &__image {
+            img{
+                @include mobile-margin(top, 3);
+                width: 100%;
+                height: auto;
+            }
+            .button {
+                @include mobile-margin(top, 3);
+            }
+        }
+        &__left {
+            h3{
+                font-size: 4.4vw;
+            }
+            p {
+                @include mobile-margin(top, 3);
+            }
+        }
+    }
+    .service::before {
+        content: "";
+        right: 1.389vw;
+        bottom: 0vw;
+        width: 43.056vw;
+        height: 44.444vw;
+    }
 }
