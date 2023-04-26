@@ -98,7 +98,7 @@ menuBtn.addEventListener('click', function () {
     menuBtn.classList.toggle('opened');
     headerPopup.classList.toggle('active');
     bodyOverflow.classList.toggle('body-lock-menu');
-    let isExpanded = menuBtn.classList.contains('opened');
+    let isExpanded = menuBtn.classList.contains('opened') ? 'true' : 'false';
     menuBtn.setAttribute('aria-expanded', isExpanded);
 });
 
@@ -109,8 +109,8 @@ closeMenu.forEach(function (item) {
         // Remove the active classes and body lock class
         menuBtn.classList.remove('opened');
         headerPopup.classList.remove('active');
-        bodyLockMenu.classList.remove('lock');
-        let isExpanded = menuBtn.classList.contains('opened');
+        bodyOverflow.classList.remove('body-lock-menu');
+        let isExpanded = menuBtn.classList.contains('opened') ? 'true' : 'false';
         menuBtn.setAttribute('aria-expanded', isExpanded);
     });
 });
