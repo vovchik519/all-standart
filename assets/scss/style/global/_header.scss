@@ -142,7 +142,7 @@
     body.body-lock-menu {
         overflow: hidden;
         .header {
-            z-index: auto;
+            z-index: $ui-index-6;
         }
     }
     body.body-lock-menu::before {
