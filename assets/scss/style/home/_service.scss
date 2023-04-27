@@ -45,7 +45,7 @@
         h3 {
             flex: 0 0 auto;
         }
-        p {
+        a {
             flex: 1 1 auto;
             @include ui-margin(top, 3);
         }
@@ -126,7 +126,7 @@
             h3{
                 font-size: 4.4vw;
             }
-            p {
+            a {
                 @include mobile-margin(top, 3);
             }
         }

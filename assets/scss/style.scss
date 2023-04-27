@@ -1,6 +1,7 @@
 @import "./style/global/_fonts.scss";
 @import "./style/global/_global.scss";
 @import "./style/global/_header.scss";
+@import "./style/global/_popup.scss";
 @import "./style/home/_firstscreen.scss";
 @import "./style/home/_service.scss";
 @import "./style/home/_advantage.scss";
@@ -13,3 +14,12 @@
 @import "./style/global/_feedback.scss";
 @import "./style/global/_map.scss";
 @import "./style/global/_footer.scss";
+
+@import "./style/team/team.scss";
+@import "./style/standard/standard.scss";
+@import "./style/ntd/ntd.scss";
+@import "./style/news/news.scss";
+@import "./style/development/development.scss";
+@import "./style/contact/contact.scss";
+@import "./style/consulting/consulting.scss";
+@import "./style/article/article.scss";

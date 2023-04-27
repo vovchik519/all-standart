@@ -1,10 +1,3 @@
-@import "./../global/_fonts.scss";
-@import "./../global/_global.scss";
-@import "./../global/_header.scss";
-@import "./../global/_feedback.scss";
-@import "./../global/_map.scss";
-@import "./../global/_footer.scss";
-
 .consulting {
     @include ui-padding(bottom, 15);
     .title__wrapper {

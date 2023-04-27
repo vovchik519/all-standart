@@ -141,3 +141,34 @@ closeMenu.forEach(function (item) {
         menuBtn.setAttribute('aria-expanded', isExpanded);
     });
 });
+
+var toTop = document.querySelector(".to-top");
+window.addEventListener("scroll", function () {
+    if (window.pageYOffset > 50) {
+        toTop.classList.add('active');
+    } else {
+        toTop.classList.remove('active');
+    }
+});
+
+let button = document.querySelectorAll('.btn-popup');
+let popup = document.querySelector('.popup');
+let popupClose = document.querySelector('.popup__close');
+button.forEach(function (item) {
+    item.addEventListener('click', function () {
+        popup.classList.add('active');
+        bodyOverflow.classList.add('body-lock');
+    });
+});
+
+let summary = document.querySelectorAll('.price__summary');
+summary.forEach(function (item) {
+    item.addEventListener('click', function () {
+        item.classList.toggle('active');
+    });
+});
+
+popupClose.addEventListener('click', function () {
+    popup.classList.remove('active');
+    bodyOverflow.classList.remove('body-lock');
+});

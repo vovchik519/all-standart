@@ -1,5 +1,8 @@
 .header {
+    position: fixed;
+    width: 100%;
     z-index: $ui-index-3;
+    background-color: white;
     &__supinfo-wrap {
         background: #f8fbfe;
     }

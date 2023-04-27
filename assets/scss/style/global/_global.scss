@@ -321,6 +321,7 @@ h3 {
     flex: 0 0 auto;
 }
 .main {
+    padding-top: 104px;
     flex: 1 0 auto;
 }
 .footer {
@@ -559,6 +560,34 @@ body.body-lock::before {
         }
     }
 }
+.to-top.active {
+    display: flex !important;
+    animation: animToTop 0.3s forwards;
+}
+.to-top {
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    right: 50px;
+    bottom: 50px;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #fff;
+    background: #4095e8;
+    border-radius: 50%;
+    z-index: $ui-index-3;
+    cursor: pointer;
+    opacity: 0;
+}
+@keyframes animToTop {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 @media (max-width: 768px) {
     h1,
     h2 {
@@ -578,6 +607,9 @@ body.body-lock::before {
     .icon {
         width: 7.778vw;
         height: 7.778vw;
+    }
+    .main{
+        padding-top: 19.722vw;
     }
     .page {
         // .page__path-list
