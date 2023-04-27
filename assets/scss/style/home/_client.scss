@@ -110,10 +110,10 @@
     .client {
         @include mobile-padding(y, 7);
         &__wrapper {
-            border-radius: 11.111vw;
-            @include mobile-padding(y, 7);
-            @include mobile-padding(left, 6);
-            @include mobile-padding(right, 6);
+            border-radius: 7vw;
+            @include mobile-padding(y, 6);
+            @include mobile-padding(left, 4);
+            @include mobile-padding(right, 4);
         }
         &__wrapper::before {
             content: "";

@@ -87,12 +87,13 @@
         }
     }
     .experience__info {
-        @include ui-margin(top, 7);
+        @include ui-margin(top, 0);
     }
 }
 @media (max-width: 768px) {
     .experience {
         &__wrapper {
+            flex-direction: column-reverse;
             margin: 0;
             @include mobile-padding(top, 7);
             @include mobile-padding(bottom, 8);
@@ -102,6 +103,7 @@
 
         &__director {
             margin: 0;
+            @include mobile-margin(top, 3);
             .button {
                 width: 100%;
                 font-size: 3.5vw;
@@ -134,7 +136,7 @@
             @include mobile-margin(top, 8);
         }
         &__info-subtitle {
-            @include mobile-margin(top, 2);
+            @include mobile-margin(top, 4);
         }
     }
 }

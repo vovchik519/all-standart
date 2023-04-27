@@ -602,7 +602,7 @@ body.body-lock::before {
         font-size: 4.444vw;
     }
     .container {
-        padding: 0 2.778vw;
+        padding: 0 5vw;
     }
     .icon {
         width: 7.778vw;
@@ -701,7 +701,7 @@ body.body-lock::before {
         p {
             width: 80%;
             font-size: 4.444vw;
-            @include mobile-margin(top, 1);
+            @include mobile-margin(top, 2);
         }
     }
     .button {
