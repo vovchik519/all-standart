@@ -24,3 +24,49 @@
         width: 750px;
     }
 }
+@media (max-width: 1200px) {
+    .review {
+        @include ui-padding(y, 15);
+
+        // .review__wrapper
+
+        &__wrapper {
+            position: relative;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        .title__wrapper {
+            text-align: center;
+            position: static;
+            transform: translateY(0);
+            width: 80%;
+            margin: 0 auto;
+            p {
+                width: 500px;
+            }
+        }
+        // .review__image
+
+        &__image {
+            width: 100%;
+            @include ui-margin(top, 4);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .review {
+        @include mobile-padding(y, 7);
+        .title__wrapper {
+            width: 100%;
+            p {
+                width: 100%;
+            }
+        }
+        // .review__image
+
+        &__image {
+            @include mobile-margin(top, 4);
+        }
+    }
+}

@@ -7,7 +7,15 @@ var swiperReview = new Swiper(".review__slider", {
         el: '.review-pagination',
         clickable: true,
     },
-    slidesPerView: 3,
+    slidesPerView: 1,
+    breakpoints: {
+        769: {
+            slidesPerView: 2
+        },
+        1200: {
+            slidesPerView: 3
+        }
+    },
     spaceBetween: 30,
     autoplay: {
         delay: 5000,
@@ -23,7 +31,15 @@ var swiperLetter = new Swiper(".letter__slider", {
         el: '.letter-pagination',
         clickable: true,
     },
-    slidesPerView: 4,
+    slidesPerView: 1,
+    breakpoints: {
+        769: {
+            slidesPerView: 2
+        },
+        1200: {
+            slidesPerView: 4
+        }
+    },
     spaceBetween: 30,
     autoplay: {
         delay: 3000,
