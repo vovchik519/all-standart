@@ -49,3 +49,63 @@
         }
     }
 }
+@media (max-width: 1080px) {
+    .advantage {
+        &__container {
+            flex-direction: column;
+        }
+        &__item {
+            width: 100%;
+        }
+        &__wrap::before {
+            content: "";
+            @include clothespin-mobile-left;
+        }
+        &__wrap::after {
+            content: "";
+            @include clothespin-mobile-right;
+        }
+    }
+}
+@media (max-width: 767.999px) {
+    .advantage {
+        @include mobile-padding(top, 7);
+        @include mobile-padding(bottom, 7);
+        // .advantage__info
+
+        &__wrap {
+            border-radius: 8.333vw;
+            @include mobile-padding(x, 6);
+            @include mobile-padding(top, 7);
+            @include mobile-padding(bottom, 7);
+            @include mobile-margin(top, 7);
+        }
+        &__container {
+            margin: 0;
+            @include mobile-margin(y, -4);
+        }
+        // .advantage__item
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+            img {
+                width: 20vw;
+                height: auto;
+            }
+            margin: 0;
+            @include mobile-margin(y, 4);
+        }
+
+        // .advantage__info
+
+        &__info {
+            width: auto;
+            margin: 0;
+            @include mobile-margin(top, 3);
+            .button {
+                @include mobile-margin(top, 3);
+            }
+        }
+    }
+}
