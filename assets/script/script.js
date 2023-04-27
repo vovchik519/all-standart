@@ -39,7 +39,18 @@ var swiperTrust = new Swiper(".trust__slider", {
         el: '.trust-pagination',
         clickable: true,
     },
-    slidesPerView: 6,
+    slidesPerView: 2,
+    breakpoints: {
+        420: {
+            slidesPerView: 3
+        },
+        769: {
+            slidesPerView: 4
+        },
+        1200: {
+            slidesPerView: 6
+        }
+    },
     spaceBetween: 30,
     grabCursor: true,
     autoplay: {

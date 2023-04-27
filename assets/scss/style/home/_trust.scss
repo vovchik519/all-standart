@@ -1,6 +1,6 @@
 .trust {
     @include ui-padding(y, 6);
-    
+
     &__slider {
         @include ui-margin(top, 6);
         position: relative;
@@ -8,5 +8,14 @@
     .swiper-wrapper {
         display: flex;
         align-items: center;
+    }
+}
+@media (max-width: 768px) {
+    .trust {
+        @include mobile-padding(y, 6);
+
+        &__slider {
+            @include mobile-margin(top, 6);
+        }
     }
 }
