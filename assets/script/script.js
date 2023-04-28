@@ -189,3 +189,5 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+$("input[type='tel']").mask("+7-(999) 999-99-99");
