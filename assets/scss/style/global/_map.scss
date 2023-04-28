@@ -1,6 +1,5 @@
 .map {
     @include ui-padding(top, 15);
-    @include ui-padding(bottom, 2);
     background-color: #f3f3f3;
     iframe{
         max-height: 70vh;
@@ -52,7 +51,7 @@
 @media (max-width: 768px) {
     .map {
         @include mobile-padding(top, 7);
-        @include mobile-padding(bottom, 2);
+        @include mobile-padding(bottom, 7);
         &__content{
             display: flex;
             flex-direction: column-reverse

@@ -191,3 +191,42 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 $("input[type='tel']").mask("+7-(999) 999-99-99");
+
+// выбираем все элементы, которым хотим добавить класс "active"
+const elements = document.querySelectorAll('.decor-item');
+
+// функция, которая проверяет, виден ли элемент на экране
+function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+// функция, которая добавляет класс "active" к элементу, если он виден на экране
+function addActiveClass() {
+    for (let i = 0; i < elements.length; i++) {
+        const el = elements[i];
+        if (isElementInViewport(el)) {
+            el.classList.add('active');
+        }
+    }
+}
+
+// добавляем класс "active" к элементам, которые уже видны на экране
+addActiveClass();
+
+// обработчик события прокрутки страницы, который вызывает функцию addActiveClass() при каждом скролле
+window.addEventListener('scroll', addActiveClass);
+
+window.addEventListener("scroll", function () {
+    const header = document.querySelector("header");
+    if (window.scrollY > 10) {
+        header.classList.add("hide");
+    } else {
+        header.classList.remove("hide");
+    }
+});

@@ -108,18 +108,12 @@
         width: 338px;
         height: 426px;
     }
-}
-.price::before {
-    content: "";
-    position: absolute;
-    display: block;
-    top: -90px;
-    left: 0px;
-    width: 450px;
-    height: 376px;
-    background: url(./../image/home/price/decor.png);
-    background-repeat: no-repeat;
-    background-size: contain;
+    .decor-item {
+        top: -90px;
+        left: 0px;
+        width: 300px;
+        height: 406px;
+    }
 }
 @media (max-width: 1024px) {
     .price__right {
@@ -199,7 +193,7 @@
             @include mobile-margin(top, 7);
             flex-direction: column;
         }
-        .price__button-wrap a{
+        .price__button-wrap a {
             margin: 0;
             @include mobile-margin(top, 4);
             @include ui-padding(x, 2);
@@ -256,8 +250,8 @@
             width: 93.889vw;
             height: 118.333vw;
         }
-    }
-    .price::before {
-        display: none;
+        .decor-item {
+            display: none;
+        }
     }
 }

@@ -10,18 +10,15 @@
             margin: 0;
         }
     }
-}
-.letter::before {
-    content: "";
-    position: absolute;
-    display: block;
-    top: -150px;
-    right: 0px;
-    width: 335px;
-    height: 296px;
-    background: url(./../image/decor/folder.png);
-    background-repeat: no-repeat;
-    background-size: contain;
+    .letter__image {
+        @include ui-margin(top, 10);
+    }
+    .decor-item {
+        top: -150px;
+        right: 0px;
+        width: 335px;
+        height: 296px;
+    }
 }
 @media (max-width: 1200px) {
     .letter::before {
@@ -33,12 +30,18 @@
         @include mobile-padding(y, 7);
         .title__wrapper {
             width: 100%;
-            p{
-        @include mobile-margin(top, 4);
+            p {
+                @include mobile-margin(top, 4);
             }
         }
+        .letter__image {
+            @include ui-margin(top, 4);
+        }
+        .decor-item {
+            display: none;
+        }
     }
-    .letter__image{
+    .letter__image {
         @include mobile-margin(top, 4);
     }
 }

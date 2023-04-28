@@ -619,6 +619,44 @@ body.body-lock::before {
         opacity: 1;
     }
 }
+.decor-item {
+    overflow: hidden;
+    height: auto;
+}
+.decor-item {
+    position: absolute;
+    display: block;
+}
+.decor-item img {
+    transform: translateX(150%);
+    object-fit: contain;
+    transition: 0.3s;
+    width: 100%;
+    height: auto;
+}
+.decor-item.active img {
+    animation: decorAnim-right 0.7s ease-in-out forwards 0.1s;
+}
+.decor-item.decor-item-left.active {
+    animation: decorAnim-left 0.7s ease-in-out forwards 0.1s;
+}
+@keyframes decorAnim-right {
+    0% {
+        transform: translateX(150%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes decorAnim-left {
+    0% {
+        transform: translateX(-150%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
 @media (max-width: 768px) {
     h1,
     h2 {

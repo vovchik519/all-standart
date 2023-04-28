@@ -36,7 +36,7 @@
         .button {
             display: none;
         }
-        img{
+        img {
             width: 140px;
             height: 210px;
         }
@@ -57,18 +57,12 @@
             flex: 0 0 auto;
         }
     }
-}
-.service::before {
-    content: "";
-    position: absolute;
-    display: block;
-    right: 5px;
-    bottom: 0px;
-    width: 155px;
-    height: 160px;
-    background: url(./../image/home/service/decor.png);
-    background-repeat: no-repeat;
-    background-size: contain;
+    .decor-item {
+        right: 5px;
+        bottom: 0px;
+        width: 155px;
+        height: 160px;
+    }
 }
 @media (max-width: 1200px) {
     .service {
@@ -117,7 +111,7 @@
             @include mobile-padding(bottom, 7);
         }
         &__image {
-            img{
+            img {
                 @include mobile-margin(top, 3);
                 width: 100%;
                 height: auto;
@@ -127,19 +121,18 @@
             }
         }
         &__left {
-            h3{
+            h3 {
                 font-size: 4.4vw;
             }
             a {
                 @include mobile-margin(top, 3);
             }
         }
-    }
-    .service::before {
-        content: "";
-        right: 1.389vw;
-        bottom: 0vw;
-        width: 43.056vw;
-        height: 44.444vw;
+        .decor-item {
+            right: 1.389vw;
+            bottom: 0vw;
+            width: 43.056vw;
+            height: 44.444vw;
+        }
     }
 }

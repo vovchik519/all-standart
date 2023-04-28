@@ -33,10 +33,12 @@
             @include ui-margin(top, 3);
         }
         form {
+            position: relative;
             display: flex;
             flex-direction: column;
             @include ui-margin(top, 13);
             width: 370px;
+            z-index: $ui-index-1;
         }
     }
     &__input {
@@ -63,19 +65,12 @@
         width: 100%;
         @include ui-margin(top, 7);
     }
-}
-.feedback::before {
-    content: "";
-    position: absolute;
-    display: block;
-    right: 0;
-    bottom: 0px;
-    width: 150px;
-    height: 189px;
-    background: url(./../image/home/feedback/decor.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    z-index: -1;
+    .decor-item {
+        right: 0;
+        bottom: 0px;
+        width: 150px;
+        height: 189px;
+    }
 }
 @media (max-width: 1080px) {
     .feedback {
@@ -121,10 +116,9 @@
         .button {
             @include mobile-margin(top, 7);
         }
-    }
-    .feedback::before {
-        content: "";
-        width: 41.667vw;
-        height: 52.5vw;
+        .decor-item {
+            width: 41.667vw;
+            height: 52.5vw;
+        }
     }
 }
