@@ -1,11 +1,11 @@
 .development {
     background-color: #f3f3f3;
-    @include mobile-padding(top, 8);
-    @include mobile-padding(bottom, 15);
+    @include ui-padding(top, 8);
+    @include ui-padding(bottom, 15);
     // .development__list
 
     &__list {
-        @include mobile-margin(top, 10);
+        @include ui-margin(top, 10);
     }
 
     // .development__item
@@ -16,14 +16,14 @@
         border-radius: 0px 100px 100px 0px;
         display: flex;
         height: 162px;
-        @include mobile-padding(right, 17);
-        @include mobile-margin(top, 4.42);
-        @include mobile-margin(left, 19);
+        @include ui-padding(right, 17);
+        @include ui-margin(top, 4.42);
+        @include ui-margin(left, 19);
     }
 
     &__item:first-child {
         margin: 0;
-        @include mobile-margin(left, 19);
+        @include ui-margin(left, 19);
     }
 
     // .development__left-wrap
