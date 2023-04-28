@@ -25,12 +25,19 @@
             @include ui-margin(top, 42);
         }
     }
-
+    .experience__info-wrap {
+        display: flex;
+        flex-direction: column;
+        background: #ffffff;
+        border: 1px solid #ededed;
+        border-radius: 6px;
+        @include ui-padding(y, 4);
+        @include ui-padding(left, 5);
+        @include ui-padding(right, 5);
+    }
     // .experience__subinfo
-
     &__name {
         display: inline-block;
-        @include ui-margin(top, 4);
         font-style: italic;
         font-weight: 600;
         font-size: 18px;
@@ -117,9 +124,12 @@
                 @include mobile-margin(top, 0);
             }
         }
-
-        // .experience__subinfo
-
+        .experience__info-wrap {
+            border-radius: 1.667vw;
+            @include mobile-padding(y, 4);
+            @include mobile-padding(left, 5);
+            @include mobile-padding(right, 5);
+        }
         &__name {
             @include mobile-margin(top, 4);
             font-size: 5vw;

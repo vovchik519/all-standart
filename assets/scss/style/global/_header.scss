@@ -129,7 +129,11 @@
         }
         .icon {
             fill: #449ef6;
+            transition: .3s;
         }
+    }
+    &__social .icon:hover {
+        fill: #1f7edd;
     }
     .menu-burger,
     &__main-call,

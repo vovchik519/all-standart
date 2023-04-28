@@ -88,14 +88,14 @@ const removeActiveClass = () => {
 
 // Function to remove 'body-lock' class from body element
 const removeBodyLockClass = () => {
-    document.body.classList.remove('body-lock');
+    document.body.classList.remove('body-lock-team');
 };
 
 // Add click event listener to each button
 buttons.forEach((button, index) => {
     button.addEventListener('click', () => {
         // Add 'body-lock' class to body element
-        document.body.classList.add('body-lock');
+        document.body.classList.add('body-lock-team');
 
         // Remove 'active' class from all team__popup elements
         removeActiveClass();
@@ -151,6 +151,13 @@ window.addEventListener("scroll", function () {
     }
 });
 
+toTop.addEventListener("click", function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+
 let button = document.querySelectorAll('.btn-popup');
 let popup = document.querySelector('.popup');
 let popupClose = document.querySelector('.popup__close');
@@ -171,4 +178,14 @@ summary.forEach(function (item) {
 popupClose.addEventListener('click', function () {
     popup.classList.remove('active');
     bodyOverflow.classList.remove('body-lock');
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
 });
