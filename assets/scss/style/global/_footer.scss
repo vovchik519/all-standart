@@ -17,6 +17,10 @@
             font-size: 28px;
             line-height: 130%;
             color: #0f6dc9;
+            transition: .3s;
+        }
+        a:hover{
+            color: #0a5299;
         }
         .button {
             display: none;
@@ -43,6 +47,10 @@
         @include ui-margin(left, 3);
         .icon {
             fill: #449ef6;
+            transition: .3s;
+        }
+        .icon:hover {
+            fill: #1f7edd;
         }
     }
 
@@ -69,6 +77,12 @@
         flex-wrap: wrap;
         height: 100px;
         width: 50%;
+        a{
+            transition: .3s;
+        }
+        a:hover{
+            color: #449ef6;
+        }
     }
 
     // .footer__item

@@ -180,15 +180,18 @@ popupClose.addEventListener('click', function () {
     bodyOverflow.classList.remove('body-lock');
 });
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+var anchors = document.querySelectorAll('a[href^="#"]');
+for (var i = 0; i < anchors.length; i++) {
+    var anchor = anchors[i];
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
     });
-});
+}
+
 
 $("input[type='tel']").mask("+7-(999) 999-99-99");
 
@@ -231,20 +234,17 @@ window.addEventListener("scroll", function () {
     }
 });
 
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+        }
+    });
+}, {
+    threshold: 0.2
+});
 
-
-
-// const observer = new IntersectionObserver(entries => {
-//     entries.forEach(entry => {
-//         if (entry.isIntersecting) {
-//             entry.target.classList.add("active");
-//         } else {
-//             entry.target.classList.remove("active");
-//         }
-//     });
-// });
-
-// const blocks = document.querySelectorAll(".anim-visible");
-// blocks.forEach(block => {
-//     observer.observe(block);
-// });
+const blocks = document.querySelectorAll(".anim-visible");
+blocks.forEach(block => {
+    observer.observe(block);
+});

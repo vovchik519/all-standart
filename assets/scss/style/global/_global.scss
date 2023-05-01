@@ -747,7 +747,26 @@ body.body-lock::before {
         opacity: 0.1;
     }
 }
-
+@keyframes animVisibleTop {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes animVisibleLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 @media (max-width: 768px) {
     h1,
     h2 {
