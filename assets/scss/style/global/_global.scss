@@ -377,12 +377,28 @@ body.body-lock::before {
     border-radius: 4px;
 }
 .button-blue {
-    background-color: #9ed0ff;
-    -webkit-box-shadow: 0px -50px 50px 0px #3c8cda inset;
-    -moz-box-shadow: 0px -50px 50px 0px #3c8cda inset;
-    box-shadow: 0px -50px 50px 0px #3c8cda inset;
+    animation: animationButtonBlue 2s ease-in-out infinite;
 }
-
+@keyframes animationButtonBlue {
+    0% {
+        background-color: #9ed0ff;
+        -webkit-box-shadow: 0px -40px 50px 0px #3c8cda inset;
+        -moz-box-shadow: 0px -40px 50px 0px #3c8cda inset;
+        box-shadow: 0px -40px 50px 0px #3c8cda inset;
+    }
+    50% {
+        background-color: #afd6fa;
+        -webkit-box-shadow: 0px -50px 40px 0px #2876c3 inset;
+        -moz-box-shadow: 0px -50px 40px 0px #2876c3 inset;
+        box-shadow: 0px -50px 40px 0px #2876c3 inset;
+    }
+    100% {
+        background-color: #9ed0ff;
+        -webkit-box-shadow: 0px -40px 50px 0px #3c8cda inset;
+        -moz-box-shadow: 0px -40px 50px 0px #3c8cda inset;
+        box-shadow: 0px -40px 50px 0px #3c8cda inset;
+    }
+}
 .button-blue::before {
     box-shadow: 0px 7px 10px 0px #0f6dc9;
 }
@@ -393,18 +409,34 @@ body.body-lock::before {
     box-shadow: 0px 4px 0px 0px #0f6dc9;
 }
 .button-blue:hover {
-    -webkit-box-shadow: 0px 50px 50px 0px #1567b7 inset;
-    -moz-box-shadow: 0px 50px 50px 0px #1567b7 inset;
-    box-shadow: 0px 50px 50px 0px #1567b7 inset;
-    background: #4197ec;
+    -webkit-box-shadow: 0px 50px 50px 0px #1567b7 inset !important;
+    -moz-box-shadow: 0px 50px 50px 0px #1567b7 inset !important;
+    box-shadow: 0px 50px 50px 0px #1567b7 inset !important;
+    background: #4197ec !important;
 }
 .button-pink {
-    background-color: #ee60d9;
-    -webkit-box-shadow: 0px -50px 50px 0px #7b176c inset;
-    -moz-box-shadow: 0px -50px 50px 0px #7b176c inset;
-    box-shadow: 0px -50px 50px 0px #7b176c inset;
+    animation: animationButtonPink 2s ease-in-out infinite;
 }
-
+@keyframes animationButtonPink {
+    0% {
+        background-color: #ee60d9;
+        -webkit-box-shadow: 0px -50px 50px 0px #7b176c inset;
+        -moz-box-shadow: 0px -50px 50px 0px #7b176c inset;
+        box-shadow: 0px -50px 50px 0px #7b176c inset;
+    }
+    50% {
+        background-color: #d46bc4;
+        -webkit-box-shadow: 0px -50px 50px 0px #5f1b55 inset;
+        -moz-box-shadow: 0px -50px 50px 0px #5f1b55 inset;
+        box-shadow: 0px -50px 50px 0px #5f1b55 inset;
+    }
+    100% {
+        background-color: #ee60d9;
+        -webkit-box-shadow: 0px -50px 50px 0px #7b176c inset;
+        -moz-box-shadow: 0px -50px 50px 0px #7b176c inset;
+        box-shadow: 0px -50px 50px 0px #7b176c inset;
+    }
+}
 .button-pink::before {
     box-shadow: 0px 7px 10px 0px #9f0789;
 }
@@ -427,7 +459,7 @@ body.body-lock::before {
         margin: 0 auto;
         font-size: 18px;
         line-height: 140%;
-        @include ui-margin(top, 1);
+        @include ui-margin(top, 3);
     }
 }
 .swiper-slide {

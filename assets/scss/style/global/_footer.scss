@@ -83,6 +83,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        font-size: 14px;
         @include ui-margin(top, 3);
         @include ui-margin(bottom, 2);
     }
@@ -92,6 +93,7 @@
     &__bottom-right {
         display: flex;
         align-items: center;
+        font-size: 12px;
         span {
             @include ui-margin(right, 4);
         }
