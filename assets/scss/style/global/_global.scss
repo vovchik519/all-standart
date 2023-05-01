@@ -688,6 +688,65 @@ body.body-lock::before {
         transform: translateX(0);
     }
 }
+.image-ripple {
+    position: relative;
+    display: block;
+    display: flex;
+    min-width: 100px;
+    min-height: 100px;
+    justify-content: center;
+    align-items: center;
+    img {
+        position: relative;
+        z-index: $ui-index-2;
+    }
+}
+.image-ripple::before {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 14.06px;
+    top: 14.06px;
+    width: 71.88px;
+    height: 71.88px;
+    background: #abd5ff;
+    border-radius: 50%;
+    z-index: $ui-index-1;
+    animation: imageRippleAnim 1s ease-in-out infinite;
+}
+.image-ripple::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100px;
+    height: 100px;
+    left: 0px;
+    top: 0px;
+    background: rgba(199, 226, 253, 0.34);
+    border-radius: 50%;
+    animation: imageRippleAnimTwo 1s ease-in-out infinite;
+}
+@keyframes imageRippleAnim {
+    0% {
+        transform: scale(1.1);
+    }
+    60% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+@keyframes imageRippleAnimTwo {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.3);
+        opacity: 0.1;
+    }
+}
 
 @media (max-width: 768px) {
     h1,
@@ -860,5 +919,19 @@ body.body-lock::before {
         -webkit-box-shadow: 0vw 13.889vw 13.889vw 0vw #ad0995 inset;
         -moz-box-shadow: 0vw 13.889vw 13.889vw 0vw #ad0995 inset;
         box-shadow: 0vw 13.889vw 13.889vw 0vw #ad0995 inset;
+    }
+    .image-ripple {
+        min-width: 27.778vw;
+        min-height: 27.778vw;
+    }
+    .image-ripple::before {
+        left: 3.906vw;
+        top: 3.906vw;
+        width: 19.967vw;
+        height: 19.967vw;
+    }
+    .image-ripple::after {
+        width: 27.778vw;
+        height: 27.778vw;
     }
 }

@@ -27,27 +27,51 @@
         content: "";
         position: absolute;
         display: block;
-        right: 0;
-        top: 0;
+        right: -10px;
+        top: -30px;
         width: 233px;
         height: 140px;
         background: url(./../image/home/client/bg-1.png);
         background-repeat: no-repeat;
         background-size: contain;
         background-position: 100% 0%;
+        animation: clientDecorAnim 5s ease-in-out infinite;
     }
     &__wrapper::after {
         content: "";
         position: absolute;
         display: block;
-        left: 0;
-        bottom: 0;
+        left: -10px;
+        bottom: -30px;
         width: 230px;
         height: 140px;
         background: url(./../image/home/client/bg-2.png);
         background-repeat: no-repeat;
         background-size: contain;
         background-position: 0 100%;
+        animation: clientDecorAnimAfter 5s ease-in-out infinite;
+    }
+    @keyframes clientDecorAnim {
+        0% {
+            transform: rotate(-10deg) translateY(20px);
+        }
+        50% {
+            transform: rotate(10deg) translateY(0px);
+        }
+        100% {
+            transform: rotate(-10deg) translateY(20px);
+        }
+    }
+    @keyframes clientDecorAnimAfter {
+        0% {
+            transform: rotate(-5deg) translateY(-20px);
+        }
+        50% {
+            transform: rotate(5deg) translateY(0px);
+        }
+        100% {
+            transform: rotate(-5deg) translateY(-20px);
+        }
     }
     &__list {
         position: relative;
@@ -63,11 +87,15 @@
 
     &__item {
         display: flex;
+        align-items: center;
         @include ui-margin(y, 6.5);
         @include ui-margin(left, 4);
         @include ui-margin(right, 4);
         p {
             @include ui-margin(left, 3);
+        }
+        img {
+            object-fit: contain;
         }
     }
 
@@ -139,7 +167,7 @@
             p {
                 @include mobile-margin(left, 3);
             }
-            img{
+            img {
                 width: 19.444vw;
                 height: 19.444vw;
             }

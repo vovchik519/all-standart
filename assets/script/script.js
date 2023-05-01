@@ -230,3 +230,21 @@ window.addEventListener("scroll", function () {
         header.classList.remove("hide");
     }
 });
+
+
+
+
+// const observer = new IntersectionObserver(entries => {
+//     entries.forEach(entry => {
+//         if (entry.isIntersecting) {
+//             entry.target.classList.add("active");
+//         } else {
+//             entry.target.classList.remove("active");
+//         }
+//     });
+// });
+
+// const blocks = document.querySelectorAll(".anim-visible");
+// blocks.forEach(block => {
+//     observer.observe(block);
+// });

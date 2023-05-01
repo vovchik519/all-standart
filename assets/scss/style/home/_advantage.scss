@@ -48,6 +48,12 @@
             @include ui-margin(top, 3);
         }
     }
+    .image-ripple::before {
+        top: 24.06px;
+    }
+    .image-ripple::after {
+        top: 10px;
+    }
 }
 @media (max-width: 1080px) {
     .advantage {
@@ -106,6 +112,12 @@
             .button {
                 @include mobile-margin(top, 3);
             }
+        }
+        .image-ripple::before {
+            top: 6.683vw;
+        }
+        .image-ripple::after {
+            top: 2.778vw;
         }
     }
 }
