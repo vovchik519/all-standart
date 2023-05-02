@@ -24,6 +24,7 @@
         height: 362px;
         border-radius: 6px;
         display: flex;
+        justify-content: space-between;
         @include ui-margin(all, 3);
         @include ui-padding(x, 7);
         @include ui-padding(top, 10);
