@@ -75,48 +75,6 @@ var swiperTrust = new Swiper(".trust__slider", {
     },
 });
 
-const buttons = document.querySelectorAll('.team__popup-btn');
-const closeButtons = document.querySelectorAll('.team__popup-close');
-
-// Function to remove 'active' class from all team__popup elements
-const removeActiveClass = () => {
-    const popups = document.querySelectorAll('.team__popup');
-    popups.forEach(popup => {
-        popup.classList.remove('active');
-    });
-};
-
-// Function to remove 'body-lock' class from body element
-const removeBodyLockClass = () => {
-    document.body.classList.remove('body-lock-team');
-};
-
-// Add click event listener to each button
-buttons.forEach((button, index) => {
-    button.addEventListener('click', () => {
-        // Add 'body-lock' class to body element
-        document.body.classList.add('body-lock-team');
-
-        // Remove 'active' class from all team__popup elements
-        removeActiveClass();
-
-        // Add 'active' class to the corresponding team__popup element
-        const popup = document.querySelectorAll('.team__popup')[index];
-        popup.classList.add('active');
-    });
-});
-
-// Add click event listener to each close button
-closeButtons.forEach(closeButton => {
-    closeButton.addEventListener('click', () => {
-        // Remove 'active' class from all team__popup elements
-        removeActiveClass();
-
-        // Remove 'body-lock' class from body element
-        removeBodyLockClass();
-    });
-});
-
 let bodyOverflow = document.querySelector('body');
 let menuBtn = document.querySelector('.menu__burger');
 let headerPopup = document.querySelector('.header__popup');
@@ -247,4 +205,36 @@ const observer = new IntersectionObserver(entries => {
 const blocks = document.querySelectorAll(".anim-visible");
 blocks.forEach(block => {
     observer.observe(block);
+});
+
+// Получаем все кнопки с классом "team__popup-btn"
+const popupButtons = document.querySelectorAll('.team__popup-btn');
+
+// Обрабатываем клик на каждой кнопке
+popupButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+        // Находим контейнер с классом "team__item" и получаем из него необходимые данные
+        const teamItem = button.closest('.team__item');
+        const name = teamItem.querySelector('.team__item-name').dataset.name;
+        const jobTitle = teamItem.querySelector('.team__item-jobtitle').dataset.jobtitle;
+        const experience = teamItem.querySelector('.team__item-experience').dataset.experience;
+        const text = teamItem.querySelector('.team__item-text').dataset.text;
+
+        // Находим блок с классом "team__popup" и заполняем его данными
+        const popup = document.querySelector('.team__popup');
+        popup.querySelector('h2').textContent = name;
+        popup.querySelector('p').innerHTML = `${jobTitle}, ${experience}. <br><br> ${text}`;
+
+        // Показываем блок с классом "team__popup"
+        popup.classList.add('active');
+        bodyOverflow.classList.add('body-lock-team');
+    });
+});
+
+// Обрабатываем клик на кнопке закрытия
+const popupCloseButton = document.querySelector('.team__popup-close');
+popupCloseButton.addEventListener('click', () => {
+    const popup = document.querySelector('.team__popup');
+    popup.classList.remove('active');
+    bodyOverflow.classList.remove('body-lock-team');
 });
