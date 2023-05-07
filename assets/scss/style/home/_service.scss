@@ -30,6 +30,12 @@
         @include ui-padding(top, 10);
         @include ui-padding(bottom, 8);
         z-index: $ui-index-1;
+        transition: 0.3s;
+    }
+    &__item:hover {
+        -webkit-box-shadow: 0px 100px 74px -73px rgba(68, 158, 246, 0.28) inset;
+        -moz-box-shadow: 0px 100px 74px -73px rgba(68, 158, 246, 0.28) inset;
+        box-shadow: 0px 100px 74px -73px rgba(68, 158, 246, 0.28) inset;
     }
     &__image {
         display: flex;
@@ -47,16 +53,25 @@
     &__left {
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
         h3 {
             flex: 0 0 auto;
         }
         a {
-            flex: 1 1 auto;
+            display: inline-block;
+            width: auto;
             @include ui-margin(top, 3);
+            transition: 0.3s;
+        }
+        a:hover {
+            color: #449ef6;
         }
         button {
             flex: 0 0 auto;
         }
+    }
+    &__left-link {
+        flex: 1 1 auto;
     }
     .decor-item {
         right: 5px;

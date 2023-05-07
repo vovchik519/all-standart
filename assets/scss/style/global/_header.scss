@@ -19,13 +19,24 @@
             display: flex;
             align-items: center;
             line-height: 20px;
+            transition: 0.3;
         }
         .icon {
             fill: #25d366;
             @include ui-margin(right, 1);
+            transition: 0.3;
+        }
+        a:hover {
+            color: #449ef6;
+            .icon {
+                fill: #03a03d;
+            }
         }
     }
-
+    &__main-right {
+        display: flex;
+        align-items: center;
+    }
     // .header__main
 
     &__main {
@@ -74,12 +85,22 @@
             color: #449ef6;
         }
     }
+    &__item-wrap {
+        display: flex;
+        align-items: center;
+        .icon {
+            display: inline-block;
+            width: 14px;
+            @include ui-margin(left, 2);
+        }
+    }
     &__item-list-wrap {
         position: absolute;
         top: 0;
         left: 0;
         transform: scale(0);
-        @include ui-padding(top, 22);
+        @include ui-padding(top, 18);
+        @include ui-margin(top, 5);
         cursor: default;
     }
     &__item-list {
@@ -221,10 +242,6 @@
         &__social {
             @include ui-margin(left, 2);
         }
-        &__main-right {
-            display: flex;
-            align-items: center;
-        }
         &__popup {
             display: none;
         }
@@ -294,6 +311,7 @@
             height: 0;
             overflow: hidden;
             @include ui-padding(y, 0);
+        @include ui-margin(top, 0);
         }
         &__item:hover &__item-list-wrap {
             animation: menuAnimMob 0.3s ease forwards; /* Применяем анимацию выскакивания */
@@ -422,6 +440,7 @@
         }
         &__item-list-wrap {
             @include mobile-padding(top, 0);
+        @include ui-margin(top, 0);
         }
         &__item-list {
             width: 100%;
