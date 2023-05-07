@@ -157,6 +157,7 @@
         fill: #1f7edd;
     }
     .menu-burger,
+    &__main-popup,
     &__main-call,
     &__social-popup,
     &__address-popup {
@@ -311,7 +312,7 @@
             height: 0;
             overflow: hidden;
             @include ui-padding(y, 0);
-        @include ui-margin(top, 0);
+            @include ui-margin(top, 0);
         }
         &__item:hover &__item-list-wrap {
             animation: menuAnimMob 0.3s ease forwards; /* Применяем анимацию выскакивания */
@@ -357,12 +358,47 @@
 }
 @media (max-width: 768px) {
     .header {
+        &__main-call-wrap {
+            position: relative;
+        }
         &__main-call {
             display: block;
             fill: transparent;
+            background-color: transparent;
             .icon {
                 width: 8.889vw;
                 height: 8.889vw;
+            }
+        }
+        &__main-popup {
+            position: absolute;
+            display: block;
+            transform: translateX(150%);
+            top: 13vw;
+            right: 0;
+            width: 75vw;
+            height: auto;
+            z-index: $ui-index-5;
+            transition: 0.3s;
+        }
+        &__main-popup-social {
+            @include mobile-margin(top, 5);
+            .icon {
+                @include mobile-margin(x, 2);
+                fill: #449ef6;
+            }
+        }
+        &__main-call:hover + .header__main-popup {
+            transform: translateX(0);
+        }
+        .header__main-popup:hover {
+            transform: translateX(0);
+        }
+        .header__social-popup,
+        .header__main-popup-social{
+            a{
+                display: inline-block;
+                height: auto;
             }
         }
         &__main-left {
@@ -371,7 +407,7 @@
         &__main-right {
             order: 1;
         }
-        &__main-call {
+        &__main-call-wrap {
             order: 3;
         }
         &__social,
@@ -440,7 +476,7 @@
         }
         &__item-list-wrap {
             @include mobile-padding(top, 0);
-        @include ui-margin(top, 0);
+            @include ui-margin(top, 0);
         }
         &__item-list {
             width: 100%;
