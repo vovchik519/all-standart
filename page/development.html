@@ -41,40 +41,36 @@
                             <div class="header__popup">
                                 <nav class="header__menu">
                                     <ul class="header__list">
-                                        <li class="header__item">Услуги
+                                        <li class="header__item close-menu"><a href="./../index.html">Главная</a></li>
+                                        <li class="header__item">
+                                            <span class="header__item-wrap">
+                                                <a href="#!">
+                                                    Услуги
+                                                </a>
+                                                <svg class="icon header__item-arrow-bottom">
+                                                    <use xlink:href="./../assets/icon/sprite.svg#icon-arrow-bottom"></use>
+                                                </svg>
+                                            </span>
                                             <div class="header__item-list-wrap">
                                                 <ul class="header__item-list">
-                                                    <li class="header__item-list-item close-menu"><a href="#!">
-                                                            Разработка
-                                                            национальных
-                                                            стандартов CТ РК</a>
-                                                    </li>
-                                                    <li class="header__item-list-item close-menu"><a href="#!">
-                                                            Разработка
-                                                            стандартов
-                                                            организации
-                                                            (технические условия) (СТ ТОО, СТ ИП) (ТУ)</a></li>
-                                                    <li class="header__item-list-item close-menu"><a href="#!">
-                                                            Консалтинг по
-                                                            стандартизации</a></li>
-                                                    <li class="header__item-list-item close-menu"><a href="#!">
-                                                            Разработка
-                                                            нормативных
-                                                            технических
-                                                            документов: технологических регламентов, методик поверки,
-                                                            паспортов
-                                                            на
-                                                            оборудование, руководств по эксплуатации</a></li>
-                                                </ul>
+                                                    <li class="header__item-list-item close-menu"><a
+                                                            href="./ntd.html">Разработка НТД</a></li>
+                                                    <li class="header__item-list-item close-menu"><a
+                                                            href="./standard.html">Стандарты</a></li>
+                                                    <li class="header__item-list-item close-menu"><a
+                                                            href="./development.html">Разработка</a></li>
+                                                    <li class="header__item-list-item close-menu"><a
+                                                            href="./consulting.html">Консултинг</a></li>
                                             </div>
                                         </li>
-                                        <li class="header__item close-menu"><a href="#advantage">Преимущества</a></li>
-                                        <li class="header__item close-menu"><a href="#price">Цены</a></li>
-                                        <li class="header__item close-menu"><a href="#about">О нас</a></li>
-                                        <li class="header__item close-menu"><a href="#review">Отзывы</a></li>
-                                        <li class="header__item close-menu"><a href="#news">Новости</a></li>
-                                        <li class="header__item close-menu"><a href="#article">Статьи</a></li>
-                                        <li class="header__item close-menu"><a href="#contact">Контакты</a></li>
+                                        <li class="header__item close-menu"><a href="./news.html">Новости</a></li>
+                                        <li class="header__item close-menu"><a href="./article.html">Статьи</a>
+                                        </li>
+                                        <li class="header__item close-menu"><a href="./team.html">Наша команда</a>
+                                        </li>
+                                        </li>
+                                        <li class="header__item close-menu"><a href="./contact.html">Контакты</a>
+                                        </li>
                                     </ul>
                                 </nav>
                                 <div class="header__social-popup ">
@@ -125,12 +121,53 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="header__main-call">
-                            <a href="tel:+77753513434">
+                        <div class="header__main-call-wrap">
+                            <button class="header__main-call">
                                 <svg class="icon">
                                     <use xlink:href="./../assets/icon/sprite.svg#icon-header-call"></use>
                                 </svg>
-                            </a>
+                            </button>
+                            <div class="header__main-popup">
+                                <address class="map__contact header__contact-address">
+                                    <div class="map__contact-item">
+                                        <svg class="icon">
+                                            <use xlink:href="./../assets/icon/sprite.svg#icon-call"></use>
+                                        </svg>
+                                        <a href="tel:+77753513434">
+                                            +7-775-351-34-34</a>
+                                    </div>
+                                    <div class="map__contact-item">
+                                        <svg class="icon">
+                                            <use xlink:href="./../assets/icon/sprite.svg#icon-address"></use>
+                                        </svg>
+                                        <a href="mailto:standard2090@mail.ru">
+                                            standard2090@mail.ru</a>
+                                    </div>
+                                    <div class="map__contact-item">
+                                        <svg class="icon">
+                                            <use xlink:href="./../assets/icon/sprite.svg#icon-mail"></use>
+                                        </svg>
+                                        <p>Казахстан, г.Алматы, мкр.Алатау, ул.Ибрагимова,9</p>
+                                    </div>
+                                    <div class="header__main-popup-social">
+                                        <a href="#!" target="_blank" title="телеграм">
+                                            <svg class="icon">
+                                                <use xlink:href="./../assets/icon/sprite.svg#icon-telegram"></use>
+                                            </svg>
+                                        </a>
+                                        <a href="#!" target="_blank" title="ватсапп">
+                                            <svg class="icon">
+                                                <use xlink:href="./../assets/icon/sprite.svg#icon-whatsapp"></use>
+                                            </svg>
+                                        </a>
+                                        <a href="#!" target="_blank" title="инстаграм">
+                                            <svg class="icon">
+                                                <use xlink:href="./../assets/icon/sprite.svg#icon-instagram"></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </address>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -408,7 +445,7 @@
                                         standard2090@mail.ru</a>
                                 </div>
                             </address>
-                            <iframe id="map_883677546" frameborder="0" width="100%" height="445"
+                            <iframe id="map_79085096" frameborder="0" width="100%" height="445px"
                                 sandbox="allow-modals allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
                         </div>
                     </div>
